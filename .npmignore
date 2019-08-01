@@ -1,0 +1,16 @@
+*.log*
+*.json
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc
+.gitignore
+.rpt2_cache
+.travis.yml
+.vscode
+CHANGELOG.md
+docs
+node_modules
+README.md
+rollup.config.js
+src

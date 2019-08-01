@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "composite": true,
+    "experimentalDecorators": true,
+    "incremental": true,
+    "lib": ["esnext.array", "esnext", "es2017", "dom", "es5"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "target": "es2015",
+    "tsBuildInfoFile": ".buildcache/default",
+  },
+  "exclude": [
+    "src/**/*.test.ts",
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
+}

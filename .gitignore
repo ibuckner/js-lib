@@ -1,0 +1,12 @@
+*.log
+*.pid
+*.pid.lock
+*.seed
+.npm
+.rpt2_cache
+dist
+logs
+npm-debug.log*
+node_modules/
+pids
+private
