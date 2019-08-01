@@ -2,7 +2,7 @@
  * Removes trailing edge whitespace from selection
  * @param {Selection} selection - valid selection of text made by user
  */
-export function trimRight(selection: Selection): void {
+export function selectionTrimRight(selection: Selection): void {
   const trailingSpace: RegExp = /\s$/;
   let match: RegExpMatchArray = trailingSpace.exec(selection.toString());
   while (match) {

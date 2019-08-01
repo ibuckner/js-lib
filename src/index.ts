@@ -1,12 +1,22 @@
 import { unique } from "./array";
-import { isContiguous, isEmpty, trim, trimLeft, trimRight} from "./selection";
+import { all, one } from "./dom-selection";
+import { isEmpty } from "./is";
+import {
+  rangeContiguous, rangeEmpty,
+  selectionTrim, selectionTrimLeft, selectionTrimRight
+} from "./selection";
 
 export {
   unique,
 
-  isContiguous,
+  all,
+  one,
+
   isEmpty,
-  trim,
-  trimLeft,
-  trimRight
+
+  rangeContiguous,
+  rangeEmpty,
+  selectionTrim,
+  selectionTrimLeft,
+  selectionTrimRight
 };

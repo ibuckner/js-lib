@@ -2,7 +2,7 @@
  * Removes leading edge whitespace from selection
  * @param {Selection} selection - valid selection of text made by user
  */
-export function trimLeft(selection: Selection): void {
+export function selectionTrimLeft(selection: Selection): void {
   const leadingSpace: RegExp = /^\s/;
   let match: RegExpMatchArray = leadingSpace.exec(selection.toString());
   while (match) {

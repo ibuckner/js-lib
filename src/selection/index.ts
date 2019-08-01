@@ -1,13 +1,13 @@
-import { isContiguous } from "./is-contiguous";
-import { isEmpty } from "./is-empty";
-import { trim } from "./trim";
-import { trimLeft } from "./trim-left";
-import { trimRight } from "./trim-right";
+import { rangeContiguous } from "./range-contiguous";
+import { rangeEmpty } from "./range-empty";
+import { selectionTrim } from "./trim";
+import { selectionTrimLeft } from "./trim-left";
+import { selectionTrimRight } from "./trim-right";
 
 export {
-  isContiguous,
-  isEmpty,
-  trim,
-  trimLeft,
-  trimRight
+  rangeContiguous,
+  rangeEmpty,
+  selectionTrim,
+  selectionTrimLeft,
+  selectionTrimRight
 };
