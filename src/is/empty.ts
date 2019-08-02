@@ -1,6 +1,6 @@
 /**
  * Returns true if variable is null or empty
- * @param x - value to test
+ * @param {any} x - value to test
  */
 export function isEmpty(x: any): boolean {
   let r: boolean = false;

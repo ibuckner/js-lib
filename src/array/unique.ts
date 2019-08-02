@@ -1,6 +1,6 @@
 /**
  * returns a set (unique) of values from an array
- * @param a {any[]} - array of values
+ * @param {any[]} a - array of values
  */
 export function unique(a: any[]): any[] {
   if (Array.isArray(a)) {
