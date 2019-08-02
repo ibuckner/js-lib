@@ -3,7 +3,7 @@
  * @param {any} d - date to test
  * @param {RegExp} re - regular expression to apply when d is a string
  */
-export function isDate(d: any, re?: RegExp): boolean {
+export function isDate<T>(d: any, re?: RegExp): boolean {
   if (Object.prototype.toString.call(d) === "[object Date]") {
     return true;
   }

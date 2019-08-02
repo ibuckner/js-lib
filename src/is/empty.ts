@@ -2,7 +2,7 @@
  * Returns true if variable is null or empty
  * @param {any} x - value to test
  */
-export function isEmpty(x: any): boolean {
+export function isEmpty<T>(x: any): boolean {
   let r: boolean = false;
   if (x && x._groups) {
     return !x.node();

@@ -1,3 +1,5 @@
+import { TPoint } from "../types";
+
 export class Drag {
   // http://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
   public svg: SVGSVGElement;
@@ -53,8 +55,8 @@ export class Drag {
     this.el = undefined;
   }
 
-  private _getMousePosition(e: any): { x: number, y: number } {
-    const CTM: any = (<any>this.svg).getScreenCTM();
+  private _getMousePosition(e: any): TPoint {
+    const CTM: DOMMatrix = (<any>this.svg).getScreenCTM();
     if (e.touches) { e = e.touches[0]; }
     return {
       x: (e.clientX - CTM.e) / CTM.a,

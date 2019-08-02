@@ -1,8 +1,8 @@
 /**
  * returns a set (unique) of values from an array
- * @param {any[]} a - array of values
+ * @param {T[]} a - array of values
  */
-export function unique(a: any[]): any[] {
+export function unique<T>(a: T[]): T[] {
   if (Array.isArray(a)) {
     const r: Set<any> = new Set();
     a.map(a => r.add(JSON.stringify(a)));

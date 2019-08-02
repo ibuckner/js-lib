@@ -1,8 +1,9 @@
   /**
+   * Returns size of square
    * https://math.stackexchange.com/questions/466198/algorithm-to-get-the-maximum-size-of-n-squares-that-fit-into-a-rectangle-with-a
-   * @param {number} width
-   * @param {number} height
-   * @param {number} n
+   * @param {number} width - Width of parent quadrant
+   * @param {number} height - height of parent quadrant
+   * @param {number} n - number of squares to fit
    */
   export function fitToQuadrant(width: number, height: number, n: number): number {
     let sx: number, sy: number;

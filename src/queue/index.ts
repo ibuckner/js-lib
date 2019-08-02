@@ -1,32 +1,32 @@
-export class Queue {
-  private _: any[] = [];
+export class Queue<T> {
+  private _: T[] = [];
 
-  public get first(): any { return this._.length > 0 ? this._[0] : null; }
-  public get last(): any { return this._.length > 0 ? this._[this._.length - 1] : null; }
+  public get first(): T { return this._.length > 0 ? this._[0] : null; }
+  public get last(): T { return this._.length > 0 ? this._[this._.length - 1] : null; }
   public get length(): number { return this._.length; }
 
-  constructor(list?: any[]) {
+  constructor(list?: T[]) {
     if (Array.isArray(list)) {
       list.forEach(i => this._.push(i));
     }
   }
 
-  public clear(): Queue {
+  public clear(): Queue<T> {
     this._ = [];
     return this;
   }
 
   /**
    * join item to end of queue
-   * @param {any} item
+   * @param {T} item
    */
-  public join(item: any): Queue { this._.push(item); return this; }
+  public join(item: T): Queue<T> { this._.push(item); return this; }
 
   /**
    * join item at front of queue
-   * @param {any} item
+   * @param {T} item
    */
-  public jump(item: any): Queue { this._.unshift(item); return this; }
+  public jump(item: T): Queue<T> { this._.unshift(item); return this; }
 
   /**
    * remove item from end of queue
