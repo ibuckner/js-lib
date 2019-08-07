@@ -1,6 +1,6 @@
 {
   "name": "@buckneri/js-lib",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "Small tools for various tasks",
   "main": "dist/js-lib.js",
   "scripts": {

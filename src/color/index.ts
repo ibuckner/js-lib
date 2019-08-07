@@ -1,7 +1,8 @@
 export type TRGB = [number, number, number];
 
 export class RGB {
-  public static CSS: {[key: string]: number } = {
+  public static readonly brightnessThreshold: number = 125;
+  public static readonly CSS: {[key: string]: number } = {
     aliceblue: 0xf0f8ff,
     antiquewhite: 0xfaebd7,
     aqua: 0x00ffff,
@@ -151,12 +152,17 @@ export class RGB {
     yellow: 0xffff00,
     yellowgreen: 0x9acd32
   };
+  public static readonly differenceThreshold: number = 500;
 
+  /**
+   * @description https://www.w3.org/TR/AERT/#color-contrast
+   */
+  public get brightness(): number {
+    return (this.r * 299 + this.g * 587 + this.b * 114) / 1000;
+  }
   public r: number = 0;
   public g: number = 0;
   public b: number = 0;
-
-  private _undo: TRGB[] = [];
 
   constructor(value: string) {
     value = value.toLowerCase().replace("#", "");
@@ -184,15 +190,14 @@ export class RGB {
   }
 
   /**
-   * Adjust color to contrast agsinst value originally specified
-   * @param {number} n - contrast factor, default is 1
+   * Returns color difference between two RGB values
+   * @description https://www.w3.org/TR/AERT/#color-contrast
+   * @param {RGB} compare - color to compare against
    */
-  public contrast(n: number = 1): RGB {
-    this._undo.push([this.r, this.g, this.b]);
-    this.r = this._n(this.r + (this.r > 88 ? -n : n) * 11);
-    this.g = this._n(this.g + (this.g > 88 ? -n : n) * 11);
-    this.b = this._n(this.b + (this.b > 88 ? -n : n) * 11);
-    return this;
+  public colorDifference(compare: RGB): number {
+    return (Math.max(this.r, compare.r) - Math.min(this.r, compare.r)) +
+    (Math.max(this.g, compare.g) - Math.min(this.g, compare.g)) +
+    (Math.max(this.b, compare.b) - Math.min(this.b, compare.b));
   }
 
   /**
@@ -215,24 +220,6 @@ export class RGB {
    */
   public toString(): string {
     return "#" + this.toHex();
-  }
-
-  /**
-   * Undo changes introduced to original color value
-   * @param {number} n - number of steps, default is 1
-   */
-  public undo(n: number = 1): RGB {
-    while (n-- > 0) {
-      let rgb: TRGB  = this._undo.pop();
-      if (rgb) {
-        this.r = rgb[0];
-        this.g = rgb[1];
-        this.b = rgb[2];
-      } else {
-        break;
-      }
-    }
-    return this;
   }
 
   private _rshift(n: number): number {

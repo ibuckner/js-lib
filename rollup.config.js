@@ -25,6 +25,12 @@ export default [
 	  plugins: plugins
 	},
 	{
+		input: "src/color/index.ts",
+		onwarn(warning, warn) {	if (message.code === 'CIRCULAR_DEPENDENCY') return; warn(warning); },
+	  output: [{ file: "dist/color/index.js", format: "esm" }],
+	  plugins: plugins
+	},
+	{
 		input: "src/dom/index.ts",
 		onwarn(warning, warn) {	if (message.code === 'CIRCULAR_DEPENDENCY') return; warn(warning); },
 	  output: [{ file: "dist/dom/index.js", format: "esm" }],
