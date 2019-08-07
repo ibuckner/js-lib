@@ -1,3 +1,5 @@
+export type TRGB = [number, number, number];
+
 export class RGB {
   public static CSS: {[key: string]: number } = {
     aliceblue: 0xf0f8ff,
@@ -154,59 +156,104 @@ export class RGB {
   public g: number = 0;
   public b: number = 0;
 
+  private _undo: TRGB[] = [];
+
   constructor(value: string) {
     value = value.toLowerCase().replace("#", "");
     let n: number;
     if (RGB.CSS[value] === undefined) {
       if (value.length === 3) {
         const r: string = value.substr(0, 1);
-        this.r = parseInt(`${r}${r}`, 16);
+        this.r = this._n(parseInt(`${r}${r}`, 16));
         const g: string = value.substr(1, 1);
-        this.g = parseInt(`${g}${g}`, 16);
+        this.g = this._n(parseInt(`${g}${g}`, 16));
         const b: string = value.substr(2, 1);
-        this.b = parseInt(`${b}${b}`, 16);
+        this.b = this._n(parseInt(`${b}${b}`, 16));
       } else if (value.length === 6) {
         n = parseInt(value, 16);
-        this.r = this._r(n);
-        this.g = this._g(n);
-        this.b = this._b(n);
+        this.r = this._n(this._rshift(n));
+        this.g = this._n(this._gshift(n));
+        this.b = this._n(this._bshift(n));
       }
     } else {
       n = RGB.CSS[value];
-      this.r = this._r(n);
-      this.g = this._g(n);
-      this.b = this._b(n);
+      this.r = this._n(this._rshift(n));
+      this.g = this._n(this._gshift(n));
+      this.b = this._n(this._bshift(n));
     }
   }
 
-  public hex(value: number): string {
-    // value = Math.max(0, Math.min(255, Math.round(value) || 0));
-    return (value < 16 ? "0" : "") + value.toString(16);
+  /**
+   * Adjust color to contrast agsinst value originally specified
+   * @param {number} n - contrast factor, default is 1
+   */
+  public contrast(n: number = 1): RGB {
+    this._undo.push([this.r, this.g, this.b]);
+    this.r = this._n(this.r + (this.r > 88 ? -n : n) * 11);
+    this.g = this._n(this.g + (this.g > 88 ? -n : n) * 11);
+    this.b = this._n(this.b + (this.b > 88 ? -n : n) * 11);
+    return this;
   }
 
+  /**
+   * Returns CSS color name if available
+   */
   public toCSSString(): string {
     const value: number = parseInt(this.toHex(), 16);
     return Object.keys(RGB.CSS).find(key => RGB.CSS[key] === value);
   }
 
+  /**
+   * Returns RRGGBB value
+   */
   public toHex(): string {
-    return this.hex(this.r) + this.hex(this.g) + this.hex(this.b);
+    return this._hex(this.r) + this._hex(this.g) + this._hex(this.b);
   }
 
+  /**
+   * Returns #RRGGBB value
+   */
   public toString(): string {
     return "#" + this.toHex();
   }
 
-  private _r(n: number): number {
+  /**
+   * Undo changes introduced to original color value
+   * @param {number} n - number of steps, default is 1
+   */
+  public undo(n: number = 1): RGB {
+    while (n-- > 0) {
+      let rgb: TRGB  = this._undo.pop();
+      if (rgb) {
+        this.r = rgb[0];
+        this.g = rgb[1];
+        this.b = rgb[2];
+      } else {
+        break;
+      }
+    }
+    return this;
+  }
+
+  private _rshift(n: number): number {
     // tslint:disable-next-line: no-bitwise
     return n >> 16 & 0xff;
   }
-  private _g(n: number): number {
+  private _gshift(n: number): number {
     // tslint:disable-next-line: no-bitwise
     return n >> 8 & 0xff;
   }
-  private _b(n: number): number {
+  private _bshift(n: number): number {
     // tslint:disable-next-line: no-bitwise
     return n >> 0 & 0xff;
+  }
+
+  private _hex(value: number): string {
+    // value = Math.max(0, Math.min(255, Math.round(value) || 0));
+    return (value < 16 ? "0" : "") + value.toString(16);
+  }
+
+  private _n(n: number): number {
+    return n > 255 ? 255 : n < 0 ? 0 : n;
   }
 }
