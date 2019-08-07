@@ -1,16 +1,24 @@
-import isBrowser from "../is/browser";
-import { isDate, yyyymmdd } from "../is/date";
-import { isIE } from "../is/ie";
+import isBrowser from "./browser";
+import { isDate, reYYYYMMDD } from "./date";
+import { isEmail, reEmail } from "./email";
 import { isEmpty } from "./empty";
-import { isNumeric } from "../is/numeric";
-import { isPostcode } from "../is/postcode";
+import { isIE } from "./ie";
+import { isNumeric, reDecimal } from "./numeric";
+import { isPostcode, rePostcode } from "./postcode";
+import { isURL, reURL } from "./url";
 
 export {
   isBrowser,
   isDate,
+  isEmail,
   isEmpty,
   isIE,
   isNumeric,
   isPostcode,
-  yyyymmdd
+  isURL,
+  reDecimal,
+  reEmail,
+  rePostcode,
+  reURL,
+  reYYYYMMDD
 };
