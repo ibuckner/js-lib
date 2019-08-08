@@ -26,3 +26,9 @@ test("RGB declared by 6 character HEX value", () => {
   expect(red.toString()).toStrictEqual("#ff6347");
   expect(red.toCSSString()).toStrictEqual("tomato");
 });
+
+test("Color brightness and difference", () => {
+  const black: RGB = new RGB("black");
+  const white: RGB = new RGB("white");
+  expect(black.colorDifference(white)).toStrictEqual(765);
+});

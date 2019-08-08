@@ -1,4 +1,4 @@
-import { isDate, yyyymmdd } from "./date";
+import { isDate, reYYYYMMDD } from "./date";
 
 test("isDate function tests", () => {
   expect(isDate("Non-empty string")).toBe(false);
@@ -8,8 +8,8 @@ test("isDate function tests", () => {
   expect(isDate(NaN)).toBe(false);
   expect(isDate(42)).toBe(false);
   expect(isDate(new Date())).toBe(true);
-  expect(isDate("20190101", yyyymmdd)).toBe(false);
-  expect(isDate("2019-01-01", yyyymmdd)).toBe(true);
+  expect(isDate("20190101", reYYYYMMDD)).toBe(false);
+  expect(isDate("2019-01-01", reYYYYMMDD)).toBe(true);
   // note: leap year errors are not handled
-  expect(isDate("2019-02-29", yyyymmdd)).toBe(true);
+  expect(isDate("2019-02-29", reYYYYMMDD)).toBe(true);
 });
