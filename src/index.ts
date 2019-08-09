@@ -12,8 +12,9 @@ import {
   squareIcon, triangleIcon, undoIcon
 } from "./icon-svg";
 import {
-  isBrowser, isDate, isEmail, isEmpty, isIE, isNumeric, isPostcode,
-  isURL, reDecimal, reEmail, rePostcode, reURL, reYYYYMMDD
+  isBrowser, isDate, isEmail, isEmpty, isIE, isNHSNumber,
+  isNumeric, isPostcode, isURL, reDecimal, reEmail,
+  rePostcode, reURL, reYYYYMMDD
 } from "./is";
 import {
   circleArea, circleRadius, countDigit, cubedRoot, fitToQuadrant,
@@ -41,7 +42,8 @@ export {
   exportIcon,
   legendIcon, magnifyIcon, rectangleIcon, selectIcon, squareIcon,
   triangleIcon, undoIcon,
-  isBrowser, isDate, isEmail, isEmpty, isIE, isNumeric, isPostcode,
+  isBrowser, isDate, isEmail, isEmpty, isIE, isNHSNumber,
+  isNumeric, isPostcode,
   isURL, reDecimal, reEmail, rePostcode, reURL, reYYYYMMDD,
   circleArea, circleRadius, countDigit, cubedRoot, fitToQuadrant,
   rectContain, rectIntersect, round, splitCurve,
