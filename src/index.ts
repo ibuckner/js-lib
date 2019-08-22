@@ -23,8 +23,7 @@ import {
 } from "./math";
 import { Queue } from "./queue";
 import {
-  rangeContiguous, rangeEmpty, selectionTrim, selectionTrimLeft,
-  selectionTrimRight
+  rangeContiguous, rangeEmpty, selectionTrim, selectionTrimLeft, selectionTrimRight
 } from "./selection";
 import {
   getTranslation, pathArc, pathLine, pattern, textWidth
@@ -49,8 +48,7 @@ export {
   rectContain, rectIntersect, round, splitCurve,
   stddev, sumValues, triangleArea, triangleHeight,
   Queue,
-  rangeContiguous, rangeEmpty, selectionTrim, selectionTrimLeft,
-  selectionTrimRight,
+  rangeContiguous, rangeEmpty, selectionTrim, selectionTrimLeft, selectionTrimRight,
   getTranslation, pathArc, pathLine, pattern, textWidth,
   TPoint, TTextWidth
 };

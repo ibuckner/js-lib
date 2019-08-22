@@ -8,4 +8,4 @@ type TTextWidth = {
 export {
   TPoint,
   TTextWidth
-}
+};

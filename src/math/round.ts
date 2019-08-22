@@ -1,7 +1,7 @@
 /**
  * Returns rounded number
- * @param {number} value 
- * @param {number} precision 
+ * @param {number} value - value to round off
+ * @param {number} precision - number of digits after the decimal point
  */
 export function round(value: number, precision: number): number {
   return precision
