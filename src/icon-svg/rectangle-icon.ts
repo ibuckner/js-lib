@@ -2,8 +2,8 @@ import { toNodes } from "../dom/to-nodes";
 
 /**
  * Draws rectangle icon to the active SVG element
- * @param {number} w 
- * @param {number} h 
+ * @param {number} w
+ * @param {number} h
  * @param {boolean} pathOnly
  */
 export function rectangleIcon(w: number, h: number, pathOnly: boolean = false): SVGSVGElement | string {

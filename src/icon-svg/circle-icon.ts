@@ -3,8 +3,8 @@ import { ellipseIcon } from "./ellipse-icon";
 
 /**
  * Draws circle icon to the active SVG element
- * @param {number} len 
- * @param {boolean} pathOnly 
+ * @param {number} len
+ * @param {boolean} pathOnly
  */
 export function circleIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   let p: any = ellipseIcon(len, len, true);

@@ -2,8 +2,8 @@ import { toNodes } from "../dom/to-nodes";
 
 /**
  * Draws diamond icon to the active SVG element
- * @param {number} len 
- * @param {boolean} pathOnly 
+ * @param {number} len
+ * @param {boolean} pathOnly
  */
 export function diamondIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   const hl: number = len / 2.0;

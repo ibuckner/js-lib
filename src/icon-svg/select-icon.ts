@@ -1,7 +1,7 @@
 import { toNodes } from "../dom/to-nodes";
 
 /**
- * Draws select icon to the active SVG element 
+ * Draws select icon to the active SVG element
  */
 export function selectIcon(): SVGSVGElement {
   const p: string = `M11 24v-2h-4v2h4zm8-22h3v3h2v-5h-5v2zm-19 15h2v-4h-2v4zm0-6h2v-4h-2v4zm2-6v-3h3v-2h-5v5h2zm22
@@ -15,6 +15,6 @@ export function selectIcon(): SVGSVGElement {
       </style>
     </defs>
     <rect class="bg" fill="#fff" height="100%" width="100%" x="0" y="0"></rect>
-    <path d="${p}" stroke="skyblue"></path>    
+    <path d="${p}" stroke="skyblue"></path>
   </svg>`, true);
 }

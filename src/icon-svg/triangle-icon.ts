@@ -3,8 +3,8 @@ import { triangleHeight } from "../math";
 
 /**
  * Draws triangle icon to the active SVG element
- * @param {number} len 
- * @param {boolean} pathOnly 
+ * @param {number} len
+ * @param {boolean} pathOnly
  */
 export function triangleIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   const h: any = triangleHeight(len, len, len);

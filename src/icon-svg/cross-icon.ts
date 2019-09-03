@@ -2,8 +2,8 @@ import { toNodes } from "../dom/to-nodes";
 
 /**
  * Draws cross icon to the active SVG element
- * @param {number} len 
- * @param {boolean} pathOnly 
+ * @param {number} len
+ * @param {boolean} pathOnly
  */
 export function crossIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   let p: string = `M${0 - len * 0.25}, ${0 - len * 1.25}`;

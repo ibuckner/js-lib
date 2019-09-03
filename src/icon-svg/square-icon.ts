@@ -3,8 +3,8 @@ import { rectangleIcon } from "./rectangle-icon";
 
 /**
  * Draws square icon to the active SVG element
- * @param {number} len 
- * @param {boolean} pathOnly 
+ * @param {number} len
+ * @param {boolean} pathOnly
  */
 export function squareIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   let p: any = rectangleIcon(len, len, true);
