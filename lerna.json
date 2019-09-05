@@ -1,0 +1,12 @@
+{
+  "command": {
+    "bootstrap": {
+      "hoist": true
+    }
+  },
+  "hoist": true,
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent"
+}

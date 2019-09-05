@@ -1,0 +1,27 @@
+{
+  "name": "@buckneri/js-lib-drag",
+  "version": "0.0.1",
+  "description": "Functions working with drag and drop on SVG elements",
+  "main": "lib/js-lib-drag.js",
+  "module": "lib/js-lib-drag.js",
+  "types": "lib/js-lib-drag.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "upload": "npm publish --access public",
+    "upload-test": "npm publish --dry-run --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibuckner/js-lib.git"
+  },
+  "author": "Ivor Buckner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ibuckner/js-lib/issues"
+  },
+  "homepage": "https://github.com/ibuckner/js-lib#readme",
+  "dependencies": {},
+  "directories": {
+    "lib": "lib"
+  }
+}

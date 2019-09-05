@@ -1,0 +1,29 @@
+{
+  "name": "@buckneri/js-lib-svg-element",
+  "version": "0.0.1",
+  "description": "Functions for working with svg elements",
+  "main": "lib/js-lib-svg-element.js",
+  "module": "lib/js-lib-svg-element.js",
+  "types": "lib/js-lib-svg-element.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "upload": "npm publish --access public",
+    "upload-test": "npm publish --dry-run --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibuckner/js-lib.git"
+  },
+  "author": "Ivor Buckner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ibuckner/js-lib/issues"
+  },
+  "homepage": "https://github.com/ibuckner/js-lib#readme",
+  "dependencies": {
+    "@buckneri/js-lib-dom": "0.0.1"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}

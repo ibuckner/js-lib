@@ -1,13 +1,21 @@
 {
   "name": "@buckneri/js-lib",
   "version": "0.0.29",
-  "description": "Small tools for various tasks",
-  "main": "dist/js-lib.js",
+  "description": "Tools for various javascript tasks in the browser",
+  "main": "js-lib.js",
+  "private": true,
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "build": "rollup -cw",
+    "build": "npm run tsc && npm run bundle",
+    "bundle": "rollup -c",
+    "clean": "lerna clean && lerna link && lerna bootstrap",
+    "setup": "lerna bootstrap",
     "upload": "npm publish --access public",
     "upload-test": "npm publish --dry-run --access public",
-    "test": "jest --config jestconfig.json"
+    "test": "jest --config jestconfig.json",
+    "tsc": "lerna run tsc"
   },
   "repository": {
     "type": "git",
@@ -19,14 +27,13 @@
     "url": "https://github.com/ibuckner/js-lib/issues"
   },
   "homepage": "https://github.com/ibuckner/js-lib#readme",
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "jest": "^24.9.0",
+    "lerna": "^3.16.4",
     "rollup": "^1.20.3",
-    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-typescript2": "^0.24.0",
+    "rollup-plugin-terser": "^5.1.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.6.2"
   }
