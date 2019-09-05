@@ -1,6 +1,6 @@
 {
   "name": "@buckneri/js-lib-drag",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Functions working with drag and drop on SVG elements",
   "main": "lib/js-lib-drag.js",
   "module": "lib/js-lib-drag.js",

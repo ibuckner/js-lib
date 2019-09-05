@@ -1,6 +1,6 @@
 {
   "name": "@buckneri/js-lib-selection",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Functions for working with text selections",
   "main": "lib/js-lib-selection.js",
   "module": "lib/js-lib-selection.js",
