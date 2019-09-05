@@ -203,7 +203,7 @@ export class RGB {
   /**
    * Returns CSS color name if available
    */
-  public toCSSString(): string {
+  public toCSSString(): string | unknown {
     const value: number = parseInt(this.toHex(), 16);
     return Object.keys(RGB.CSS).find(key => RGB.CSS[key] === value);
   }

@@ -20,7 +20,7 @@ export function rangeEmpty(range: Range): boolean {
  */
 export function selectionTrimLeft(selection: Selection): void {
   const leadingSpace: RegExp = /^\s/;
-  let match: RegExpMatchArray = leadingSpace.exec(selection.toString());
+  let match: RegExpMatchArray | null = leadingSpace.exec(selection.toString());
   while (match) {
     if (selection.rangeCount === 0) {
       break;
@@ -37,7 +37,7 @@ export function selectionTrimLeft(selection: Selection): void {
  */
 export function selectionTrimRight(selection: Selection): void {
   const trailingSpace: RegExp = /\s$/;
-  let match: RegExpMatchArray = trailingSpace.exec(selection.toString());
+  let match: RegExpMatchArray | null = trailingSpace.exec(selection.toString());
   while (match) {
     if (selection.rangeCount === 0) {
       break;

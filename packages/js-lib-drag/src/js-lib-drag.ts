@@ -1,25 +1,29 @@
 export class Drag {
   // http://www.petercollingridge.co.uk/tutorials/svg/interactive/dragging/
-  public svg: SVGSVGElement;
-  public el: SVGElement;
+  public svg: SVGSVGElement | null;
+  public el: SVGElement | undefined;
   public offset: any;
   public transform: any;
 
   constructor(selector: string) {
     this.svg = document.querySelector(selector);
-    const defs: SVGElement = this.svg.querySelector("defs");
-    const style: SVGElement = document.createElementNS("http://www.w3.org/2000/svg", "style");
-    style.textContent = `.draggable { cursor: move } .nodrag { cursor: not-allowed }`;
-    defs.appendChild(style);
-    this.svg.addEventListener("mousedown", e => this.startDrag(e));
-    this.svg.addEventListener("mousemove", e => this.drag(e));
-    this.svg.addEventListener("mouseup", () => this.endDrag());
-    this.svg.addEventListener("mouseleave", () => this.endDrag());
-    this.svg.addEventListener("touchstart", e => this.startDrag(e));
-    this.svg.addEventListener("touchmove", e => this.drag(e));
-    this.svg.addEventListener("touchend", () => this.endDrag());
-    this.svg.addEventListener("touchleave", () => this.endDrag());
-    this.svg.addEventListener("touchcancel", () => this.endDrag());
+    if (this.svg) {
+      const defs: SVGElement | null = this.svg.querySelector("defs");
+      if (defs) {
+        const style: SVGElement = document.createElementNS("http://www.w3.org/2000/svg", "style");
+        style.textContent = `.draggable { cursor: move } .nodrag { cursor: not-allowed }`;
+        defs.appendChild(style);
+      }
+      this.svg.addEventListener("mousedown", e => this.startDrag(e));
+      this.svg.addEventListener("mousemove", e => this.drag(e));
+      this.svg.addEventListener("mouseup", () => this.endDrag());
+      this.svg.addEventListener("mouseleave", () => this.endDrag());
+      this.svg.addEventListener("touchstart", e => this.startDrag(e));
+      this.svg.addEventListener("touchmove", e => this.drag(e));
+      this.svg.addEventListener("touchend", () => this.endDrag());
+      this.svg.addEventListener("touchleave", () => this.endDrag());
+      this.svg.addEventListener("touchcancel", () => this.endDrag());
+    }
   }
 
   public startDrag(e: any): void {
