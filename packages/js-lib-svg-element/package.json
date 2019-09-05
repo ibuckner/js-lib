@@ -1,6 +1,6 @@
 {
   "name": "@buckneri/js-lib-svg-element",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Functions for working with svg elements",
   "main": "lib/js-lib-svg-element.js",
   "module": "lib/js-lib-svg-element.js",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/ibuckner/js-lib#readme",
   "dependencies": {
-    "@buckneri/js-lib-dom": "0.0.1"
+    "@buckneri/js-lib-dom": "^0.0.2"
   },
   "directories": {
     "lib": "lib"

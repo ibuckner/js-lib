@@ -1,6 +1,6 @@
 {
   "name": "@buckneri/js-lib-selection",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Functions for working with text selections",
   "main": "lib/js-lib-selection.js",
   "module": "lib/js-lib-selection.js",
@@ -20,7 +20,6 @@
     "url": "https://github.com/ibuckner/js-lib/issues"
   },
   "homepage": "https://github.com/ibuckner/js-lib#readme",
-  "dependencies": {},
   "directories": {
     "lib": "lib"
   }

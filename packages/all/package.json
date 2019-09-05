@@ -1,6 +1,6 @@
 {
   "name": "@buckneri/js-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Small tools for various tasks",
   "main": "lib/js-lib.js",
   "module": "lib/js-lib.js",
@@ -22,17 +22,17 @@
   },
   "homepage": "https://github.com/ibuckner/js-lib#readme",
   "dependencies": {
-    "@buckneri/js-lib-array": "^0.0.1",
-    "@buckneri/js-lib-color": "^0.0.1",
-    "@buckneri/js-lib-dom": "^0.0.1",
-    "@buckneri/js-lib-dom-selection": "^0.0.1",
-    "@buckneri/js-lib-drag": "^0.0.1",
-    "@buckneri/js-lib-icon-canvas": "^0.0.1",
-    "@buckneri/js-lib-icon-svg": "^0.0.2",
+    "@buckneri/js-lib-array": "^0.0.2",
+    "@buckneri/js-lib-color": "^0.0.2",
+    "@buckneri/js-lib-dom": "^0.0.2",
+    "@buckneri/js-lib-dom-selection": "^0.0.2",
+    "@buckneri/js-lib-drag": "^0.0.2",
+    "@buckneri/js-lib-icon-canvas": "^0.0.2",
+    "@buckneri/js-lib-icon-svg": "^0.0.3",
     "@buckneri/js-lib-is": "^0.0.1",
-    "@buckneri/js-lib-queue": "^0.0.1",
-    "@buckneri/js-lib-math": "^0.0.1",
-    "@buckneri/js-lib-selection": "^0.0.1",
-    "@buckneri/js-lib-svg-element": "^0.0.1"
+    "@buckneri/js-lib-math": "^0.0.2",
+    "@buckneri/js-lib-queue": "^0.0.2",
+    "@buckneri/js-lib-selection": "^0.0.2",
+    "@buckneri/js-lib-svg-element": "^0.0.2"
   }
 }
