@@ -11,8 +11,7 @@
     "build": "npm run tsc && npm run bundle",
     "bundle": "rollup -c",
     "clean": "lerna clean && lerna link && lerna bootstrap",
-    "setup": "lerna bootstrap",
-    "upload": "npm publish --access public",
+    "upload": "lerna publish",
     "upload-test": "npm publish --dry-run --access public",
     "test": "jest --config jestconfig.json",
     "tsc": "lerna run tsc"
