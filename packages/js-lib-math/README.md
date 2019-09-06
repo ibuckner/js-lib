@@ -25,4 +25,4 @@ npm i @buckneri/js-lib-math
 * stddev (*array of values*)
 * sumValues (*array of values*)
 * triangleArea (*a*, *b*, *c*)
-* triangleHeight(*a*, *b*, *c*)
+* triangleHeight (*a*, *b*, *c*)
