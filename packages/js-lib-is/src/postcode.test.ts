@@ -10,6 +10,4 @@ test("isPostcode function tests", () => {
   expect(isPostcode("EC8W 0AA")).toBe(true);
   expect(isPostcode("Non-empty string")).toBe(false);
   expect(isPostcode("")).toBe(false);
-  expect(isPostcode(null)).toBe(false);
-  expect(isPostcode(undefined)).toBe(false);
 });

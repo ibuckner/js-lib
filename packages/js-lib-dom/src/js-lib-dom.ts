@@ -97,7 +97,10 @@ export function resetWheel(event: WheelEvent): {
  * @param {string} template - HTML template string
  * @param {boolean} isSVG
  */
-export function toNodes(template: string, isSVG: boolean = false): any {
+export function toNodes(
+  template: string, 
+  isSVG: boolean = false
+): any {
   try {
     const d: DOMParser = new DOMParser();
     let root: Document;

@@ -15,8 +15,8 @@ test("Queue tests", () => {
   expect(q2.length).toStrictEqual(5);
   expect(q2.first).toStrictEqual(11);
   expect(q2.last).toStrictEqual(33);
-  const a: number = q2.leave();
-  const b: number = q2.next();
+  const a: number | null | undefined = q2.leave();
+  const b: number | null | undefined = q2.next();
   expect(a).toStrictEqual(33);
   expect(b).toStrictEqual(11);
   expect(q2.toArray()).toStrictEqual([1,2,3]);
