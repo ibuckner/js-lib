@@ -6,3 +6,8 @@ Simple queue data structure
 
 ```
 npm i @buckneri/js-lib-queue
+```
+
+## Reference · [Source](https://github.com/ibuckner/js-lib/blob/master/packages/js-lib-queue/src/js-lib-queue.ts)
+
+* new Queue()
