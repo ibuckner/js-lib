@@ -2,7 +2,7 @@
   "author": "Ivor Buckner",
   "bugs": {
     "url": "https://github.com/ibuckner/js-lib/issues"
-  },  
+  },
   "description": "Functions working with drag and drop on SVG elements",
   "directories": {
     "lib": "lib"
@@ -23,5 +23,5 @@
     "tsc": "tsc"
   },
   "types": "lib/js-lib-drag.d.ts",
-  "version": "0.0.3"
+  "version": "0.0.4"
 }

@@ -2,7 +2,7 @@
   "author": "Ivor Buckner",
   "bugs": {
     "url": "https://github.com/ibuckner/js-lib/issues"
-  },  
+  },
   "description": "Functions for working with arrays",
   "directories": {
     "lib": "lib"
@@ -23,5 +23,5 @@
     "tsc": "tsc"
   },
   "types": "lib/js-lib-array.d.ts",
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

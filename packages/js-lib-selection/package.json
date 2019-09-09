@@ -1,5 +1,5 @@
 {
-  "author": "Ivor Buckner",  
+  "author": "Ivor Buckner",
   "bugs": {
     "url": "https://github.com/ibuckner/js-lib/issues"
   },
@@ -18,10 +18,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ibuckner/js-lib.git"
-  },  
+  },
   "scripts": {
     "tsc": "tsc"
   },
   "types": "lib/js-lib-selection.d.ts",
-  "version": "0.0.3"
+  "version": "0.0.4"
 }
