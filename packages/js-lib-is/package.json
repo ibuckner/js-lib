@@ -1,26 +1,27 @@
 {
-  "name": "@buckneri/js-lib-is",
-  "version": "0.0.3",
+  "author": "Ivor Buckner",
+  "bugs": {
+    "url": "https://github.com/ibuckner/js-lib/issues"
+  },
+  "directories": {
+    "lib": "lib"
+  },
   "description": "Functions for asking 'Is something a ...?'",
+  "homepage": "https://github.com/ibuckner/js-lib#readme",
+  "license": "MIT",
   "main": "lib/js-lib-is.js",
   "module": "lib/js-lib-is.js",
-  "types": "lib/js-lib-is.d.ts",
-  "scripts": {
-    "tsc": "tsc",
-    "upload": "npm publish --access public",
-    "upload-test": "npm publish --dry-run --access public"
+  "name": "@buckneri/js-lib-is",
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ibuckner/js-lib.git"
   },
-  "author": "Ivor Buckner",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ibuckner/js-lib/issues"
+  "scripts": {
+    "tsc": "tsc"
   },
-  "homepage": "https://github.com/ibuckner/js-lib#readme",
-  "directories": {
-    "lib": "lib"
-  }
+  "types": "lib/js-lib-is.d.ts",
+  "version": "0.0.3"
 }

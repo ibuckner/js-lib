@@ -1,26 +1,27 @@
 {
-  "name": "@buckneri/js-lib-array",
-  "version": "0.0.2",
+  "author": "Ivor Buckner",
+  "bugs": {
+    "url": "https://github.com/ibuckner/js-lib/issues"
+  },  
   "description": "Functions for working with arrays",
+  "directories": {
+    "lib": "lib"
+  },
+  "homepage": "https://github.com/ibuckner/js-lib#readme",
+  "license": "MIT",
   "main": "lib/js-lib-array.js",
   "module": "lib/js-lib-array.js",
-  "types": "lib/js-lib-array.d.ts",
-  "scripts": {
-    "tsc": "tsc",
-    "upload": "npm publish --access public",
-    "upload-test": "npm publish --dry-run --access public"
+  "name": "@buckneri/js-lib-array",
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ibuckner/js-lib.git"
   },
-  "author": "Ivor Buckner",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ibuckner/js-lib/issues"
+  "scripts": {
+    "tsc": "tsc"
   },
-  "homepage": "https://github.com/ibuckner/js-lib#readme",
-  "directories": {
-    "lib": "lib"
-  }
+  "types": "lib/js-lib-array.d.ts",
+  "version": "0.0.2"
 }

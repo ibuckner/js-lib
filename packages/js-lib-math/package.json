@@ -1,26 +1,27 @@
 {
-  "name": "@buckneri/js-lib-math",
-  "version": "0.0.2",
+  "author": "Ivor Buckner",
+  "bugs": {
+    "url": "https://github.com/ibuckner/js-lib/issues"
+  },  
   "description": "Functions for calculations",
+  "directories": {
+    "lib": "lib"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ibuckner/js-lib#readme",
   "main": "lib/js-lib-math.js",
   "module": "lib/js-lib-math.js",
-  "types": "lib/js-lib-math.d.ts",
-  "scripts": {
-    "tsc": "tsc",
-    "upload": "npm publish --access public",
-    "upload-test": "npm publish --dry-run --access public"
+  "name": "@buckneri/js-lib-math",
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ibuckner/js-lib.git"
   },
-  "author": "Ivor Buckner",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ibuckner/js-lib/issues"
+  "scripts": {
+    "tsc": "tsc"
   },
-  "homepage": "https://github.com/ibuckner/js-lib#readme",
-  "directories": {
-    "lib": "lib"
-  }
+  "types": "lib/js-lib-math.d.ts",
+  "version": "0.0.2"
 }

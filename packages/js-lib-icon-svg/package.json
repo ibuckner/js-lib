@@ -1,30 +1,31 @@
 {
-  "name": "@buckneri/js-lib-icon-svg",
-  "version": "0.0.3",
-  "description": "Create icons on SVG element",
-  "main": "lib/js-lib-icon-svg.js",
-  "module": "lib/js-lib-icon-svg.js",
-  "types": "lib/js-lib-icon-svg.d.ts",
-  "scripts": {
-    "tsc": "tsc",
-    "upload": "npm publish --access public",
-    "upload-test": "npm publish --dry-run --access public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ibuckner/js-lib.git"
-  },
   "author": "Ivor Buckner",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ibuckner/js-lib/issues"
   },
-  "homepage": "https://github.com/ibuckner/js-lib#readme",
+  "description": "Create icons on SVG element",
   "dependencies": {
     "@buckneri/js-lib-dom": "^0.0.2",
     "@buckneri/js-lib-math": "^0.0.2"
   },
   "directories": {
     "lib": "lib"
-  }
+  },
+  "homepage": "https://github.com/ibuckner/js-lib#readme",
+  "license": "MIT",
+  "main": "lib/js-lib-icon-svg.js",
+  "module": "lib/js-lib-icon-svg.js",
+  "name": "@buckneri/js-lib-icon-svg",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibuckner/js-lib.git"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "types": "lib/js-lib-icon-svg.d.ts",
+  "version": "0.0.3"
 }
