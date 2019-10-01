@@ -2,6 +2,7 @@ import { isPostcode } from "./js-lib-is";
 
 test("isPostcode function tests", () => {
   expect(isPostcode("GIR 0AA")).toBe(true);
+  expect(isPostcode("gir0aa")).toBe(true);
   expect(isPostcode("E9 1AA")).toBe(true);
   expect(isPostcode("F10 3BB")).toBe(true);
   expect(isPostcode("IG1 4CC")).toBe(true);

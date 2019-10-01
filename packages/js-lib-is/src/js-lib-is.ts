@@ -2,11 +2,7 @@ export const isBrowser: boolean =  typeof window !== undefined && typeof documen
 export const reYYYYMMDD: RegExp = /^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/;
 export const reEmail: RegExp = /\b[\w\._]+@[\w]+\.[\w\.]+\b/g;
 export const reDecimal: RegExp = /\b[-+]?([0-9]+(\.[0-9]*)?|\.[0-9]+)([eE][-+]?[0-9]+)?\b/g;
-export const rePostcode: RegExp = new RegExp(["^([Gg][Ii][Rr] 0[Aa]{2})",
-"|((([A-Za-z][0-9]{1,2})",
-"|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})",
-"|(([A-Za-z][0-9][A-Za-z])",
-"|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z])))) [0-9][A-Za-z]{2})$"].join(""));
+export const rePostcode: RegExp = /^(gir\s{0,3}0aa)|((([a-z][0-9]{1,2})|(([a-z][a-hj-y][0-9]{1,2})|(([a-z][0-9][a-z])|([a-z][a-hj-y][0-9]?[a-z]))))\s{0,3}[0-9][a-z]{2})$/i;
 export const reURL: RegExp = /\b(https?|ftp|file):\/\/([\w\d-.]+):?(\d{2,})?\b/g;
 
 /**
