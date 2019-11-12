@@ -31,7 +31,7 @@ export {
 export { Queue } from "@buckneri/js-lib-queue";
 
 export {
-  circleArea, circleRadius, countDigit, cubedRoot,
+  circleArea, circleRadius, countDigit,
   fitToQuadrant, rectContain, rectIntersect,
   round, splitCurve, stddev, sumValues,
   triangleArea, triangleHeight
