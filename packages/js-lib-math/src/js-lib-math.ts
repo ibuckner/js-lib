@@ -27,37 +27,28 @@ export function countDigit(n: number): number {
 }
 
 /**
- * Returns cube root value of n
- * @param {number} n - number to apply function over
+ * Returns size of square
+ * https://math.stackexchange.com/questions/466198/algorithm-to-get-the-maximum-size-of-n-squares-that-fit-into-a-rectangle-with-a
+ * @param {number} width - Width of parent quadrant
+ * @param {number} height - height of parent quadrant
+ * @param {number} n - number of squares to fit
  */
-export function cubedRoot(n: number): number {
-  const y: number = Math.pow(Math.abs(n), 1 / 3);
-  return n < 0 ? -y : y;
-}
-
-  /**
-   * Returns size of square
-   * https://math.stackexchange.com/questions/466198/algorithm-to-get-the-maximum-size-of-n-squares-that-fit-into-a-rectangle-with-a
-   * @param {number} width - Width of parent quadrant
-   * @param {number} height - height of parent quadrant
-   * @param {number} n - number of squares to fit
-   */
-  export function fitToQuadrant(width: number, height: number, n: number): number {
-    let sx: number, sy: number;
-    const px: number = Math.ceil(Math.sqrt(n * width / height));
-    if (Math.floor(px * height / width) * px < n) {
-      sx = height / Math.ceil(px * height / width);
-    } else {
-      sx = width / px;
-    }
-    const py: number = Math.ceil(Math.sqrt(n * height / width));
-    if (Math.floor(py * width / height) * py < n) {
-      sy = width / Math.ceil(width * py / height);
-    } else {
-      sy = height / py;
-    }
-    return Math.max(sx, sy);
+export function fitToQuadrant(width: number, height: number, n: number): number {
+  let sx: number, sy: number;
+  const px: number = Math.ceil(Math.sqrt(n * width / height));
+  if (Math.floor(px * height / width) * px < n) {
+    sx = height / Math.ceil(px * height / width);
+  } else {
+    sx = width / px;
   }
+  const py: number = Math.ceil(Math.sqrt(n * height / width));
+  if (Math.floor(py * width / height) * py < n) {
+    sy = width / Math.ceil(width * py / height);
+  } else {
+    sy = height / py;
+  }
+  return Math.max(sx, sy);
+}
 
 /**
  * returns true is the point lies within the shape
