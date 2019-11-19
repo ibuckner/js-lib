@@ -15,6 +15,7 @@
     "@buckneri/js-lib-math": "^0.0.3",
     "@buckneri/js-lib-queue": "^0.0.3",
     "@buckneri/js-lib-selection": "^0.0.4",
+    "@buckneri/js-lib-slicer": "^0.0.1",
     "@buckneri/js-lib-svg-element": "^0.0.3"
   },
   "description": "Small tools for various tasks",

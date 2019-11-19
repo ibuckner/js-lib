@@ -1,12 +1,12 @@
 {
   "name": "root",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "devDependencies": {
-    "@types/jest": "^24.0.22",
+    "@types/jest": "^24.0.23",
     "jest": "^24.9.0",
     "lerna": "^3.18.4",
-    "rollup": "^1.26.5",
+    "rollup": "^1.27.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.2",
     "ts-jest": "^24.1.0",
