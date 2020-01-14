@@ -38,6 +38,11 @@ export {
 } from "@buckneri/js-lib-math";
 
 export {
+  randomInt,
+  randomTimeInt
+} from "@buckneri/js-lib-random";
+
+export {
   rangeContiguous, rangeEmpty, selectionTrimLeft,
   selectionTrimRight, selectionTrim
 } from "@buckneri/js-lib-selection";
