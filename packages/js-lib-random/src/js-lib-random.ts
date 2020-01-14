@@ -11,7 +11,7 @@ export function randomInt(min: number, max: number): number {
  * Returns a random time value as hhmm (represented as an integer)
  * @param {number} min - minimum time value (inclusive)
  * @param {number} max - maximum time value (inclusive)
- * @param {number} round - not yet implemented. Rounds time to the nearest minute
+ * @param {number} round - rounds the minutes to the nearest value specified e.g. half-hour
  */
 export function randomTimeInt(min: number, max: number, round: number): number {
   let t: number = Math.floor(Math.random() * (max - min + 1) + min);
@@ -20,9 +20,22 @@ export function randomTimeInt(min: number, max: number, round: number): number {
     mm = 100 - mm;
     ++hh;
   }
+  mm = roundNearest(mm, round);
+  if (mm > 59) {
+    mm = 0;
+  }
+  
   if (hh > 23) {
     hh = 0;
   }
   t = hh * 100 + mm
   return t > max ? max : t;
+}
+
+function roundNearest(value: number, round: number): number {
+  round = Math.abs(Math.trunc(round));
+  if (round === 0) {
+    round = 1;
+  }
+  return Math.round(value / round) * round;
 }
