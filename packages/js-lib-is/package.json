@@ -23,5 +23,5 @@
     "tsc": "tsc"
   },
   "types": "lib/js-lib-is.d.ts",
-  "version": "0.0.6"
+  "version": "0.0.7"
 }
