@@ -4,7 +4,13 @@
   "private": true,
   "devDependencies": {
     "@types/jest": "^24.9.0",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsdoc": "^20.3.1",
     "jest": "^24.9.0",
+    "jsdoc": "^3.6.3",
     "lerna": "^3.20.2",
     "rollup": "^1.29.1",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -16,10 +22,10 @@
     "build": "npm run tsc && npm run bundle",
     "bundle": "rollup -c",
     "clean": "lerna clean && lerna link && lerna bootstrap",
+    "eslint": "eslint -c .eslintrc.json --ext .ts --ext .js ./src",
     "upload": "lerna publish",
     "upload-test": "npm publish --dry-run --access public",
     "test": "jest --config jestconfig.json",
     "tsc": "lerna run tsc"
-  },
-  "dependencies": {}
+  }
 }

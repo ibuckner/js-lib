@@ -1,8 +1,8 @@
 /**
  * https://en.wikipedia.org/wiki/Aspect_ratio_(image)
- * @param {number} width
- * @param {number} height
- * @param {string} ratio
+ * @param width
+ * @param height
+ * @param ratio
  */
 export function aspectRatio (width: number, height: number, ratio: string): { width: number, height: number, area: number} {
   const parse: Function = (r: string) => {
@@ -24,7 +24,7 @@ export function aspectRatio (width: number, height: number, ratio: string): { wi
 
 /**
  * https://2ality.com/2019/10/shared-mutable-state.html
- * @param {any} original 
+ * @param original 
  */
 export function deepCopy (original: any): any {
   if (Array.isArray(original)) {
@@ -59,7 +59,7 @@ export function getJSON(url: string, fn: Function): XMLHttpRequest {
 
 /**
  * Returns relative node position in relation to visible screen
- * @param {Element} n - DOM node
+ * @param n - DOM node
  */
 export function pageOffset(n: Element): any {
   const r: ClientRect = n.getBoundingClientRect();
@@ -72,7 +72,7 @@ export function pageOffset(n: Element): any {
 
 /**
  * https://github.com/facebookarchive/fixed-data-table/blob/master/src/vendor_upstream/dom/normalizeWheel.js
- * @param {WheelEvent} event
+ * @param event
  */
 export function resetWheel(event: WheelEvent): {
   pixelX: number,
@@ -116,8 +116,7 @@ export function resetWheel(event: WheelEvent): {
 
 /**
  * Returns DOM node from HTML string
- * @param {string} template - HTML template string
- * @param {boolean} isSVG
+ * @param template - HTML template string
  */
 export function toNodes(
   template: string, 
