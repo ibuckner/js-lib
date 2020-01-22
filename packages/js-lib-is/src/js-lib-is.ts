@@ -7,8 +7,8 @@ export const reURL: RegExp = /\b(https?|ftp|file):\/\/([\w\d-.]+):?(\d{2,})?\b/g
 
 /**
  * Returns true if a date
- * @param {any} d - date to test
- * @param {RegExp} re - regular expression to apply when d is a string
+ * @param d - date to test
+ * @param re - regular expression to apply when d is a string
  */
 export function isDate(d: any, re?: RegExp): boolean {
   if (Object.prototype.toString.call(d) === "[object Date]") {
@@ -19,8 +19,8 @@ export function isDate(d: any, re?: RegExp): boolean {
 
 /**
  * Returns true if a valid UK postcode
- * @param {string} p - value to test
- * https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
+ * @param p - value to test
+ * @description https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
  */
 export function isEmail(e: string): boolean {
   return reEmail.test(e);
@@ -28,7 +28,7 @@ export function isEmail(e: string): boolean {
 
 /**
  * Returns true if variable is null or empty
- * @param {any} x - value to test
+ * @param x - value to test
  */
 export function isEmpty(x: any): boolean {
   let r: boolean = false;
@@ -57,7 +57,7 @@ const isIE10: boolean = isBrowser && /MSIE 10/.test(navigator.userAgent);
 
 /**
  * Returns true if browser is Internet Explorer 11
- * @param {number} version - version number to test
+ * @param version - version number to test
  */
 export function isIE(version: number): boolean {
   return (version === 11)
@@ -69,7 +69,7 @@ export function isIE(version: number): boolean {
 
 /**
  * Returns true if meets valid NHS number check
- * @param {string} n - number to be tested
+ * @param n - number to be tested
  */
 export function isNHSNumber(nhs: string): boolean {
   nhs = nhs.replace(/ /g, "");
@@ -90,7 +90,7 @@ export function isNHSNumber(nhs: string): boolean {
 
 /**
  * Returns true if number is checked to be valid
- * @param {any} n - Number to check
+ * @param n - Number to check
  */
 export function isNumeric(n: any): boolean {
   return !isNaN(n - parseFloat(n));
@@ -98,8 +98,8 @@ export function isNumeric(n: any): boolean {
 
 /**
  * Returns true if a valid UK postcode
- * @param {string} p - value to test
- * https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
+ * @param p - value to test
+ * @description https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
  */
 export function isPostcode(p: string): boolean {
   return rePostcode.test(p);
@@ -107,7 +107,7 @@ export function isPostcode(p: string): boolean {
 
 /**
  * Returns true if a valid URL
- * @param {string} u - value to test
+ * @param u - value to test
  */
 export function isURL(u: string): boolean {
   return reURL.test(u);

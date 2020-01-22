@@ -1,6 +1,6 @@
 /**
  * returns a set (unique) of values from an array
- * @param {T[]} a - array of values
+ * @param a - array of values
  */
 export function unique<T>(a: T[]): T[] {
   if (Array.isArray(a)) {

@@ -18,13 +18,13 @@ export class Queue<T> {
 
   /**
    * join item to end of queue
-   * @param {T} item
+   * @param item
    */
   public join(item: T): Queue<T> { this._.push(item); return this; }
 
   /**
    * join item at front of queue
-   * @param {T} item
+   * @param item
    */
   public jump(item: T): Queue<T> { this._.unshift(item); return this; }
 

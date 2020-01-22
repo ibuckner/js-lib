@@ -192,7 +192,7 @@ export class RGB {
   /**
    * Returns color difference between two RGB values
    * @description https://www.w3.org/TR/AERT/#color-contrast
-   * @param {RGB} compare - color to compare against
+   * @param compare - color to compare against
    */
   public colorDifference(compare: RGB): number {
     return (Math.max(this.r, compare.r) - Math.min(this.r, compare.r)) +

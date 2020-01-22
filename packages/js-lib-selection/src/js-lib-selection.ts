@@ -1,6 +1,6 @@
 /**
  * Returns false if range is interrupted by multiple node types
- * @param {Range} range - valid document fragment containing nodes and text
+ * @param range - valid document fragment containing nodes and text
  */
 export function rangeContiguous(range: Range): boolean {
   return (<any>range.startContainer).data === (<any>range.endContainer).data;
@@ -8,7 +8,7 @@ export function rangeContiguous(range: Range): boolean {
 
 /**
  * Returns false if range contains one or more nodes
- * @param {Range} range - valid document fragment containing nodes and text
+ * @param range - valid document fragment containing nodes and text
  */
 export function rangeEmpty(range: Range): boolean {
   return range.startOffset === range.endOffset;
@@ -16,7 +16,7 @@ export function rangeEmpty(range: Range): boolean {
 
 /**
  * Removes leading edge whitespace from selection
- * @param {Selection} selection - valid selection of text made by user
+ * @param selection - valid selection of text made by user
  */
 export function selectionTrimLeft(selection: Selection): void {
   const leadingSpace: RegExp = /^\s/;
@@ -33,7 +33,7 @@ export function selectionTrimLeft(selection: Selection): void {
 
 /**
  * Removes trailing edge whitespace from selection
- * @param {Selection} selection - valid selection of text made by user
+ * @param selection - valid selection of text made by user
  */
 export function selectionTrimRight(selection: Selection): void {
   const trailingSpace: RegExp = /\s$/;
@@ -50,7 +50,7 @@ export function selectionTrimRight(selection: Selection): void {
 
 /**
  * Removes surrounding whitespace from selection
- * @param {Selection} selection - valid selection of text made by user
+ * @param selection - valid selection of text made by user
  */
 export function selectionTrim(selection: Selection): void {
   selectionTrimLeft(selection);

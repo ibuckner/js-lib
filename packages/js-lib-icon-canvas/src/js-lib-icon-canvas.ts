@@ -1,11 +1,11 @@
 /**
- * Draws circle to the active canvas
- * @param {CanvasRenderingContext2D} cx 
- * @param {number} x 
- * @param {number} y 
- * @param {number} size 
- * @param {number} dx 
- * @param {number} dy 
+ * Draws icon to the active canvas
+ * @param cx - Canvas 2d context
+ * @param x - horizontal position
+ * @param y - vertical position
+ * @param size - circle dimension
+ * @param dx - relative x position
+ * @param dy - relative y position
  */
 export function circleIconCanvas(
   cx: CanvasRenderingContext2D,
@@ -22,13 +22,13 @@ export function circleIconCanvas(
 }
 
 /**
- * Draws circle to the active canvas
- * @param {CanvasRenderingContext2D} cx 
- * @param {number} x 
- * @param {number} y 
- * @param {number} size 
- * @param {number} dx 
- * @param {number} dy 
+ * Draws icon to the active canvas
+ * @param cx - Canvas 2d context
+ * @param x - horizontal position
+ * @param y - vertical position
+ * @param size - circle dimension
+ * @param dx - relative x position
+ * @param dy - relative y position
  */
 export function personIconCanvas(
   cx: CanvasRenderingContext2D,

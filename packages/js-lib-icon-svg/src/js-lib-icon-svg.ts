@@ -3,8 +3,8 @@ import { triangleHeight } from "@buckneri/js-lib-math";
 
 /**
  * Draws circle icon to the active SVG element
- * @param {number} len
- * @param {boolean} pathOnly
+ * @param len - dimension of object
+ * @param pathOnly - default is false, draw the full SVG object
  */
 export function circleIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   let p: any = ellipseIcon(len, len, true);
@@ -45,8 +45,8 @@ export function closeIcon(): SVGSVGElement {
 
 /**
  * Draws cross icon to the active SVG element
- * @param {number} len
- * @param {boolean} pathOnly
+ * @param len - dimension of object
+ * @param pathOnly - default is false, draw the full SVG object
  */
 export function crossIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   let p: string = `M${0 - len * 0.25}, ${0 - len * 1.25}`;
@@ -68,8 +68,8 @@ export function crossIcon(len: number, pathOnly: boolean = false): SVGSVGElement
 
 /**
  * Draws diamond icon to the active SVG element
- * @param {number} len
- * @param {boolean} pathOnly
+ * @param len - dimension of object
+ * @param pathOnly - default is false, draw the full SVG object
  */
 export function diamondIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   const hl: number = len / 2.0;
@@ -91,9 +91,9 @@ export function diamondIcon(len: number, pathOnly: boolean = false): SVGSVGEleme
 
 /**
  * Draws ellipse icon to the active SVG element
- * @param {number} rx
- * @param {number} ry
- * @param {boolean} pathOnly
+ * @param rx - dimension of radius x
+ * @param ry - dimension of radius y
+ * @param pathOnly - default is false, draw the full SVG object
  */
 export function ellipseIcon(rx: number = 1, ry: number = 1, pathOnly: boolean = false): SVGSVGElement | string {
   let p: string = `M-${rx},0 a${rx},${ry} 0 1,0 ${2 * rx},0 a${rx},${ry} 0 1,0 ${-2 * rx},0`;
@@ -174,9 +174,9 @@ export function magnifyIcon(): SVGSVGElement {
 
 /**
  * Draws rectangle icon to the active SVG element
- * @param {number} w
- * @param {number} h
- * @param {boolean} pathOnly
+ * @param w - dimension of width
+ * @param h - dimension of height
+ * @param pathOnly - default is false, draw the full SVG object
  */
 export function rectangleIcon(w: number, h: number, pathOnly: boolean = false): SVGSVGElement | string {
   let p: string = `M-${w / 2.0},-${h / 2.0} h${w} v${h} h-${w} v-${h}z`;
@@ -216,8 +216,8 @@ export function selectIcon(): SVGSVGElement {
 
 /**
  * Draws square icon to the active SVG element
- * @param {number} len
- * @param {boolean} pathOnly
+ * @param len - dimension of object
+ * @param pathOnly - default is false, draw the full SVG object
  */
 export function squareIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   let p: any = rectangleIcon(len, len, true);
@@ -238,8 +238,8 @@ export function squareIcon(len: number, pathOnly: boolean = false): SVGSVGElemen
 
 /**
  * Draws triangle icon to the active SVG element
- * @param {number} len
- * @param {boolean} pathOnly
+ * @param len - dimension of object
+ * @param pathOnly - default is false, draw the full SVG object
  */
 export function triangleIcon(len: number, pathOnly: boolean = false): SVGSVGElement | string {
   const h: any = triangleHeight(len, len, len);

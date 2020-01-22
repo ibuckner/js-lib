@@ -1,7 +1,7 @@
 export type TSlicerState = {
   filtered: boolean,
   selected: boolean
-}
+};
 
 export class Slicer<T> {
   private _: Map<T, TSlicerState> = new Map<T, TSlicerState>();
@@ -37,8 +37,8 @@ export class Slicer<T> {
 
   /**
    * Toggles the state of an item in the slicer
-   * @param {T} item - item identifier
-   * @param {boolean} ctrlKey - state of Ctrl Key 
+   * @param item - item identifier
+   * @param ctrlKey - state of Ctrl Key 
    */
   public toggle(item: T, ctrlKey: boolean = false): Slicer<T> {
     this._.forEach((value: TSlicerState, key: T) => {

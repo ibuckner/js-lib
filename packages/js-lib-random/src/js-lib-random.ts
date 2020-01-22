@@ -1,21 +1,26 @@
 /**
  * returns an integer contrained to the min and max values given
- * @param {number} min - minimum integer (inclusive)
- * @param {number} max - maximum integer (inclusive)
+ * @param min - minimum integer (inclusive)
+ * @param max - maximum integer (inclusive)
  */
 export function randomInt(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  const r = Math.floor(Math.random() * (max - min + 1) + min);
+  return r > max
+    ? max
+    : r < min
+      ? min
+      : r;
 }
 
 /**
  * Returns a random time value as hhmm (represented as an integer)
- * @param {number} min - minimum time value (inclusive)
- * @param {number} max - maximum time value (inclusive)
- * @param {number} round - rounds the minutes to the nearest value specified e.g. half-hour
+ * @param min - minimum time value (inclusive)
+ * @param max - maximum time value (inclusive)
+ * @param round - rounds the minutes to the nearest value specified e.g. half-hour
  */
 export function randomTimeInt(min: number, max: number, round: number): number {
-  let t: number = Math.floor(Math.random() * (max - min + 1) + min);
-  let hh: number = Math.floor(t / 100), mm: number = t % 100;
+  let r: number = Math.floor(Math.random() * (max - min + 1) + min);
+  let hh: number = Math.floor(r / 100), mm: number = r % 100;
   if (mm > 59) {
     mm = 100 - mm;
     ++hh;
@@ -28,10 +33,19 @@ export function randomTimeInt(min: number, max: number, round: number): number {
   if (hh > 23) {
     hh = 0;
   }
-  t = hh * 100 + mm
-  return t > max ? max : t;
+  r = hh * 100 + mm;
+  return r > max 
+    ? max 
+    : r < min
+      ? min
+      : r;
 }
 
+/**
+ * Rounds value to the nearest rounding factor
+ * @param value - value to round off
+ * @param round - rounding factor
+ */
 function roundNearest(value: number, round: number): number {
   round = Math.abs(Math.trunc(round));
   if (round === 0) {

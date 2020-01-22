@@ -1,6 +1,6 @@
 /**
  * Returns a circle's area given by radius
- * @param {number} r - radius of circle
+ * @param r - radius of circle
  */
 export function circleArea(r: number): number {
   return Math.PI * r * r;
@@ -8,7 +8,7 @@ export function circleArea(r: number): number {
 
 /**
  * Returns the circle's radius based on circle area
- * @param {number} area - area of circle
+ * @param area - area of circle
  */
 export function circleRadius(area: number): number {
   return Math.sqrt(area / Math.PI);
@@ -16,7 +16,7 @@ export function circleRadius(area: number): number {
 
 /**
  * Returns the number of significant digits
- * @param {number} n - number to inspect
+ * @param n - number to inspect
  */
 export function countDigit(n: number): number {
   n = Math.round(Math.abs(n));
@@ -28,10 +28,10 @@ export function countDigit(n: number): number {
 
 /**
  * Returns size of square
- * https://math.stackexchange.com/questions/466198/algorithm-to-get-the-maximum-size-of-n-squares-that-fit-into-a-rectangle-with-a
- * @param {number} width - Width of parent quadrant
- * @param {number} height - height of parent quadrant
- * @param {number} n - number of squares to fit
+ * @description https://math.stackexchange.com/questions/466198/algorithm-to-get-the-maximum-size-of-n-squares-that-fit-into-a-rectangle-with-a
+ * @param width - Width of parent quadrant
+ * @param height - height of parent quadrant
+ * @param n - number of squares to fit
  */
 export function fitToQuadrant(width: number, height: number, n: number): number {
   let sx: number, sy: number;
@@ -52,8 +52,8 @@ export function fitToQuadrant(width: number, height: number, n: number): number 
 
 /**
  * returns true is the point lies within the shape
- * @param {number[][]} r - shape extent value (top left and bottom right)
- * @param {any} point - single point
+ * @param r - shape extent value (top left and bottom right)
+ * @param point - single point
  */
 export function rectContain(r: number[][], point: any): boolean {
   return r[0][0] <= point.x &&
@@ -64,8 +64,8 @@ export function rectContain(r: number[][], point: any): boolean {
 
 /**
  * returns true if intersection occurs
- * @param {number[][]} r1 - shape extent value (top left and bottom right)
- * @param {number[][]} r2 - shape extent value
+ * @param r1 - shape extent value (top left and bottom right)
+ * @param r2 - shape extent value
  */
 export function rectIntersect(r1: number[][], r2: number[][]): boolean {
   return r1[0][0] <= r2[1][0] &&
@@ -76,8 +76,8 @@ export function rectIntersect(r1: number[][], r2: number[][]): boolean {
 
 /**
  * Returns rounded number
- * @param {number} value - value to round off
- * @param {number} precision - number of digits after the decimal point
+ * @param value - value to round off
+ * @param precision - number of digits after the decimal point
  */
 export function round(value: number, precision: number): number {
   return precision
@@ -87,9 +87,9 @@ export function round(value: number, precision: number): number {
 
 /**
  * de Casteljau's algorithm for drawing and splitting bezier curves.
- * Inspired by https://pomax.github.io/bezierinfo/
- * @param {Number[][]} points Array of [x,y] points: [start, control1, control2, ..., end]
- * @param {Number} t Where to split the curve (value between [0, 1])
+ * @description https://pomax.github.io/bezierinfo/
+ * @param points - Array of [x,y] points: [start, control1, control2, ..., end]
+ * @param t - Where to split the curve (value between [0, 1])
  */
 function decasteljau(points: Number[][], t: number): any {
   const left: any[] = [];
@@ -129,7 +129,7 @@ function decasteljau(points: Number[][], t: number): any {
 
 /**
  * Convert segments represented as points back into a command object
- * @param {Number[][]} points Array of [x,y] points: [start, control1, control2, ..., end]
+ * @param points - Array of [x,y] points: [start, control1, control2, ..., end]
  */
 function pointsToCommand(points: Number[][]): any {
   const command: any = {};
@@ -158,8 +158,8 @@ function pointsToCommand(points: Number[][]): any {
 
 /**
  * Runs de Casteljau's algorithm enough times to produce the desired number of segments.
- * @param {Number[][]} points Array of [x,y] points for de Casteljau (the initial segment to split)
- * @param {Number} segmentCount Number of segments to split the original into
+ * @param points - Array of [x,y] points for de Casteljau (the initial segment to split)
+ * @param segmentCount - Number of segments to split the original into
  */
 function splitCurveAsPoints(
   points: Number[][],
@@ -203,9 +203,9 @@ function splitCurveAsPoints(
 /**
  * Convert command objects to arrays of points, run de Casteljau's algorithm on it
  * to split into to the desired number of segments.
- * @param {any} commandStart The start command object
- * @param {any} commandEnd The end command object
- * @param {Number} segmentCount The number of segments to create
+ * @param commandStart - The start command object
+ * @param commandEnd - The end command object
+ * @param segmentCount - The number of segments to create
  */
 export function splitCurve(
   commandStart: any,
@@ -213,10 +213,10 @@ export function splitCurve(
   segmentCount: number
 ): any[] {
   const points: any[] = [[commandStart.x, commandStart.y]];
-  if (commandEnd.x1 != null) {
+  if (commandEnd.x1 !== null) {
     points.push([commandEnd.x1, commandEnd.y1]);
   }
-  if (commandEnd.x2 != null) {
+  if (commandEnd.x2 !== null) {
     points.push([commandEnd.x2, commandEnd.y2]);
   }
   points.push([commandEnd.x, commandEnd.y]);
@@ -226,7 +226,7 @@ export function splitCurve(
 
 /**
  * Returns standard deviation value
- * @param {number[]} values - array of values
+ * @param values - array of values
  */
 export function stddev(values: number[]): number {
   const avg: number = sumValues(values) / values.length;
@@ -237,7 +237,7 @@ export function stddev(values: number[]): number {
 
 /**
  * Returns the sum of values
- * @param {number[]} values - array of numbers to sum up
+ * @param values - array of numbers to sum up
  */
 export function sumValues(values: number[]): number {
   return values.reduce((sum, v) => sum + v, 0);
@@ -245,9 +245,9 @@ export function sumValues(values: number[]): number {
 
 /**
  * Returns a triangle's area given by lengths of three sides
- * @param {number} a - side a
- * @param {number} b - side b
- * @param {number} c - side c
+ * @param a - side a
+ * @param b - side b
+ * @param c - side c
  */
 export function triangleArea(a: number, b: number, c: number): number {
   const sum: number = a + b + c;
@@ -258,9 +258,9 @@ export function triangleArea(a: number, b: number, c: number): number {
 
 /**
  * Returns a triangle's height given by lengths of three sides
- * @param {number} a - side a
- * @param {number} b - side b
- * @param {number} c - side c
+ * @param a - side a
+ * @param b - side b
+ * @param c - side c
  */
 export function triangleHeight(a: number, b: number, c: number): { a: number, b: number, c: number} {
   const area: any = triangleArea(a, b, c);

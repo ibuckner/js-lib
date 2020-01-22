@@ -7,8 +7,8 @@ type TTextWidth = {
 
 /**
  * returns the x and y values for the transform attributes
- * @param {string} transform - SVG transform string
- * @see http://stackoverflow.com/questions/38224875/replacing-d3-transform-in-d3-v4
+ * @param transform - SVG transform string
+ * @description http://stackoverflow.com/questions/38224875/replacing-d3-transform-in-d3-v4
  */
 export function getTranslation(transform: string): any {
   const g: SVGGElement = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -23,8 +23,8 @@ export function getTranslation(transform: string): any {
 /**
  * Returns path string as an arc between two points.
  * If radius is specified, arc terminates at the circumference of each point.
- * @param {any} start - Start point of arc
- * @param {any} end - End point of arc
+ * @param start - Start point of arc
+ * @param end - End point of arc
  */
 export function pathArc(start: any, end: any): string {
   start.r = start.r || 0;
@@ -57,8 +57,8 @@ export function pathArc(start: any, end: any): string {
 /**
  * Returns path string as a straight line between two points.
  * If radius is specified, line terminates at the circumference of each point.
- * @param {any} start - Start point of arc
- * @param {any} end - End point of arc
+ * @param start - Start point of arc
+ * @param end - End point of arc
  */
 export function pathLine(start: any, end: any): string {
   start.r = start.r || 0;
@@ -95,8 +95,8 @@ export function pattern(options: { id: string, url: string }): SVGPatternElement
 
 /**
  * measures height and width of strings as they appear in the SVG document
- * @param {string[]} text - array of string values to measure
- * @param {d3 selection} target - d3 selection to materialise strings to
+ * @param text - array of string values to measure
+ * @param target - d3 selection to materialise strings to
  */
 export function textWidth(text: string[], target: any): TTextWidth {
   const r: TTextWidth = { max: { h: 0, w: 0 }, text: [] };
