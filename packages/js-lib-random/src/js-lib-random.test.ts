@@ -5,7 +5,7 @@ test("randomInt tests", () => {
     const start = 1;
     const end = start + Math.floor(100 * Math.random());
     const res: number = randomInt(start, end);
-    expect(res > start - 1 && res < end).toBe(true);
+    expect(res > start - 1 && res < end + 1).toBe(true);
   }
 });
 
