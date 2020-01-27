@@ -5,6 +5,11 @@ export type TSlicerState = {
 
 export class Slicer<T> {
   private _: Map<T, TSlicerState> = new Map<T, TSlicerState>();
+  private _active: boolean = false;
+
+  public get active(): boolean {
+    return this._active;
+  }
 
   public get data(): any {
     return this._;
@@ -12,9 +17,10 @@ export class Slicer<T> {
 
   public set data(list: any) {
     if (Array.isArray(list)) {
-      this._.clear();
       list.forEach((item: T) => {
-        this._.set(item, { filtered: false, selected: false });
+        if (!this._.has(item)) {
+          this._.set(item, { filtered: false, selected: false });
+        }
       });
     }
   }
@@ -32,6 +38,7 @@ export class Slicer<T> {
     this._.forEach((_: TSlicerState, key: T) => {
       this._.set(key, { filtered: false, selected: false });
     });
+    this._active = false;
     return this;
   }
 
@@ -68,9 +75,12 @@ export class Slicer<T> {
       }
     });
 
+    this._active = selectionList.length > 0 ? true : false;
+    
     if (filtered === this._.size || 
         selectionList.length === 0 || 
         selectionList.length === this._.size) {
+      // Everything was selected or deselected
       this.clear();
     } else if (selectionList.length > 0 && filtered === 0) {
       this._.forEach((value: TSlicerState, key: T) => {
@@ -78,7 +88,7 @@ export class Slicer<T> {
         this._.set(key, value);
       });
     }
-
+    
     return this;
   }
 }

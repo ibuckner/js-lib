@@ -3,16 +3,17 @@
   "version": "0.2.1",
   "private": true,
   "devDependencies": {
-    "@types/jest": "^24.9.0",
+    "@types/jest": "^24.9.1",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-jsdoc": "^20.3.1",
+    "eslint-plugin-jsdoc": "^21.0.0",
     "jest": "^25.1.0",
     "jsdoc": "^3.6.3",
     "lerna": "^3.20.2",
-    "rollup": "^1.29.1",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.30.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.2.0",
     "ts-jest": "^25.0.0",
@@ -21,11 +22,13 @@
   "scripts": {
     "build": "npm run tsc && npm run bundle",
     "bundle": "rollup -c",
-    "clean": "lerna clean && lerna link && lerna bootstrap",
+    "clean": "lerna clean && lerna link && lerna bootstrap && npm run wipe.npm && npm run clean.npm",
+    "clean.npm": "npm i --package-lock-only",
     "eslint": "eslint -c .eslintrc.json --ext .ts --ext .js ./src",
     "upload": "lerna publish",
     "upload-test": "npm publish --dry-run --access public",
     "test": "jest --config jestconfig.json",
-    "tsc": "lerna run tsc"
+    "tsc": "lerna run tsc",
+    "wipe.npm": "rimraf package-lock.json"
   }
 }
