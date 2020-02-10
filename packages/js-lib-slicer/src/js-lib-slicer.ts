@@ -64,10 +64,10 @@ export class Slicer<T> {
 
   /**
    * Updates the slicer state using Ctrl key modifier
-   * @param item - item selected by user
+   * @param key - item selected by user
    */
-  public toggleCumulative(item: T): Slicer<T> {
-    const state: TSlicerState | undefined = this._.get(item);
+  public toggleCumulative(key: T): Slicer<T> {
+    const state: TSlicerState | undefined = this._.get(key);
     if (state) {
       state.selected = !state.selected;
       if (state.selected) {
@@ -75,12 +75,16 @@ export class Slicer<T> {
       } else {
         --this.selected;
       }
+      this._.set(key, state);
     }
     if (this.selected < 1) {
       this.clear();
     } else {
-      this._.forEach((value: TSlicerState) => value.filtered = !value.selected);
-      this.lastSelection = item;
+      this._.forEach((value: TSlicerState, key: T) => {
+        value.filtered = !value.selected;
+        this._.set(key, value);
+      });
+      this.lastSelection = key;
     }
     return this;
   }
@@ -93,42 +97,35 @@ export class Slicer<T> {
     if (item === this.lastSelection) {
       this.clear();
     } else {
-      this.lastSelection = item;
+      let state: number = 0;
       this.selected = 0;
-      let rangeStart: T | undefined;
-      let rangeEnd: T | undefined;      
       this._.forEach((value: TSlicerState, key: T) => {
-        if (item === key) {
-          if (value.selected) {
-            rangeStart = key;
-            rangeEnd = key;
-          } else {
-            value.filtered = false;
-            value.selected = true;
+        if (state === 1) { // in progress
+          if (item === key || this.lastSelection === key) { // signifies end of range choice
+            state = -1;
           }
-          if (rangeStart === undefined) {
-            rangeStart = key;
-          } else if (rangeStart && rangeEnd === undefined) {
-            rangeEnd = key;
-          }
-        } else if (value.selected && rangeStart === undefined) {
-          rangeStart = key;
-        } else {
-          if (rangeStart && rangeEnd === undefined) {
-            if (item === key) {
-              rangeEnd = key;
-            }
-            value.filtered = false;
-            value.selected = true;
-          } else {
-            value.filtered = true;
-            value.selected = false;
-          }
-        }
-        if (value.selected) {
+          value = { filtered: false, selected: true };
           ++this.selected;
+        } else if (state === 0) { // pending
+          if (item === key || this.lastSelection === key) {
+            state = 1;
+            value = { filtered: false, selected: true };
+            ++this.selected;
+          } else {
+            value = { filtered: true, selected: false };
+          }
+        } else { // stopped
+          value = { filtered: true, selected: false };
         }
+        this._.set(key, value);
       });
+      this.lastSelection = item;
+      if (this.selected === 0) {
+        this._.forEach((value: TSlicerState, key: T) => {
+          value = { filtered: true, selected: false };
+          this._.set(key, value);
+        });
+      }
     }
     return this;
   }
@@ -148,9 +145,9 @@ export class Slicer<T> {
             value.selected = !value.selected;
             value.filtered = !value.selected;
           } else {
-            value.selected = false;
-            value.filtered = true;
+            value = { filtered: true, selected: false };
           }
+          this._.set(key, value);
         });
         this.selected = 1;
         this.lastSelection = item;

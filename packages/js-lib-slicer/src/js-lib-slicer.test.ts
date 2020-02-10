@@ -78,21 +78,21 @@ test("Test slicer using Shift key", () => {
   expect(slicer.lastSelection).toBe("flea");
 
   slicer.toggle("dog", SlicerModifier.SHIFT_KEY);
+  expect(slicer.data.get("cat")).toStrictEqual({ filtered: true, selected: false });
+  expect(slicer.data.get("dog")).toStrictEqual({ filtered: false, selected: true });
+  expect(slicer.data.get("rat")).toStrictEqual({ filtered: false, selected: true });
+  expect(slicer.data.get("flea")).toStrictEqual({ filtered: false, selected: true });
+  expect(slicer.data.get("mouse")).toStrictEqual({ filtered: true, selected: false });
+  expect(slicer.selected).toBe(3);
+  expect(slicer.lastSelection).toBe("dog");
+
+  slicer.toggle("cat", SlicerModifier.SHIFT_KEY);
   expect(slicer.data.get("cat")).toStrictEqual({ filtered: false, selected: true });
   expect(slicer.data.get("dog")).toStrictEqual({ filtered: false, selected: true });
   expect(slicer.data.get("rat")).toStrictEqual({ filtered: true, selected: false });
   expect(slicer.data.get("flea")).toStrictEqual({ filtered: true, selected: false });
   expect(slicer.data.get("mouse")).toStrictEqual({ filtered: true, selected: false });
   expect(slicer.selected).toBe(2);
-  expect(slicer.lastSelection).toBe("dog");
-
-  slicer.toggle("cat", SlicerModifier.SHIFT_KEY);
-  expect(slicer.data.get("cat")).toStrictEqual({ filtered: false, selected: true });
-  expect(slicer.data.get("dog")).toStrictEqual({ filtered: true, selected: false });
-  expect(slicer.data.get("rat")).toStrictEqual({ filtered: true, selected: false });
-  expect(slicer.data.get("flea")).toStrictEqual({ filtered: true, selected: false });
-  expect(slicer.data.get("mouse")).toStrictEqual({ filtered: true, selected: false });
-  expect(slicer.selected).toBe(1);
   expect(slicer.lastSelection).toBe("cat");
 
   slicer.toggle("cat", SlicerModifier.SHIFT_KEY);
@@ -101,7 +101,6 @@ test("Test slicer using Shift key", () => {
   expect(slicer.data.get("rat")).toStrictEqual({ filtered: false, selected: false });
   expect(slicer.data.get("flea")).toStrictEqual({ filtered: false, selected: false });
   expect(slicer.data.get("mouse")).toStrictEqual({ filtered: false, selected: false });
-
   expect(slicer.selected).toBe(0);
   expect(slicer.lastSelection).toBeUndefined();
 
