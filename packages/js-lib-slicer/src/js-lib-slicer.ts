@@ -36,6 +36,21 @@ export class Slicer<T> {
   }
 
   /**
+   * Add item to slicer
+   * @param key 
+   */
+  public add(key: T): Slicer<T> {
+    if (!this._.has(key)) {
+      let state: TSlicerState = { filtered: false, selected: false };
+      if (this.selected > 0) {
+        state.filtered = true;
+      }
+      this._.set(key, state);
+    }
+    return this;
+  }
+
+  /**
    * Removes all selections on the slicer
    */
   public clear(): Slicer<T> {
@@ -44,6 +59,19 @@ export class Slicer<T> {
     });
     this.selected = 0;
     this.lastSelection = undefined;
+    return this;
+  }
+
+  /**
+   * Remove item from slicer
+   * @param key 
+   */
+  public remove(key: T): Slicer<T> {
+    const state: TSlicerState | undefined = this._.get(key);
+    if (state && state.selected) {
+      --this.selected;
+    }
+    this._.delete(key);
     return this;
   }
 
@@ -77,7 +105,7 @@ export class Slicer<T> {
       }
       this._.set(key, state);
     }
-    if (this.selected < 1) {
+    if (this.selected === 0 || this.selected === this._.size) {
       this.clear();
     } else {
       this._.forEach((value: TSlicerState, key: T) => {
