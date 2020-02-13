@@ -26,8 +26,18 @@ export class Slicer<T> {
     }
   }
 
+  public get selection(): T[] {
+    const result: T[] = [];
+    this._.forEach((value: TSlicerState, key: T) => {
+      if (this.selectionCount === 0 || value.selected) {
+        result.push(key);
+      }
+    });    
+    return result;
+  }
+
   public lastSelection: T | undefined;
-  public selected: number = 0;
+  public selectionCount: number = 0;
 
   constructor(list?: T[]) {
     if (list) {
@@ -42,7 +52,7 @@ export class Slicer<T> {
   public add(key: T): Slicer<T> {
     if (!this._.has(key)) {
       let state: TSlicerState = { filtered: false, selected: false };
-      if (this.selected > 0) {
+      if (this.selectionCount > 0) {
         state.filtered = true;
       }
       this._.set(key, state);
@@ -57,7 +67,7 @@ export class Slicer<T> {
     this._.forEach((_: TSlicerState, key: T) => {
       this._.set(key, { filtered: false, selected: false });
     });
-    this.selected = 0;
+    this.selectionCount = 0;
     this.lastSelection = undefined;
     return this;
   }
@@ -69,9 +79,14 @@ export class Slicer<T> {
   public remove(key: T): Slicer<T> {
     const state: TSlicerState | undefined = this._.get(key);
     if (state && state.selected) {
-      --this.selected;
+      --this.selectionCount;
     }
     this._.delete(key);
+    if (this.selectionCount === 0) {
+      this.clear();
+    } else {
+      this.lastSelection = this.selection[this.selection.length - 1];
+    }
     return this;
   }
 
@@ -99,13 +114,13 @@ export class Slicer<T> {
     if (state) {
       state.selected = !state.selected;
       if (state.selected) {
-        ++this.selected;
+        ++this.selectionCount;
       } else {
-        --this.selected;
+        --this.selectionCount;
       }
       this._.set(key, state);
     }
-    if (this.selected === 0 || this.selected === this._.size) {
+    if (this.selectionCount === 0 || this.selectionCount === this._.size) {
       this.clear();
     } else {
       this._.forEach((value: TSlicerState, key: T) => {
@@ -126,19 +141,24 @@ export class Slicer<T> {
       this.clear();
     } else {
       let state: number = 0;
-      this.selected = 0;
+      this.selectionCount = 0;
       this._.forEach((value: TSlicerState, key: T) => {
         if (state === 1) { // in progress
           if (item === key || this.lastSelection === key) { // signifies end of range choice
             state = -1;
+          } 
+          if (this.lastSelection === undefined) {
+            state = -1;
+            value = { filtered: true, selected: false };
+          } else {
+            value = { filtered: false, selected: true };
+            ++this.selectionCount;
           }
-          value = { filtered: false, selected: true };
-          ++this.selected;
         } else if (state === 0) { // pending
           if (item === key || this.lastSelection === key) {
             state = 1;
             value = { filtered: false, selected: true };
-            ++this.selected;
+            ++this.selectionCount;
           } else {
             value = { filtered: true, selected: false };
           }
@@ -148,7 +168,7 @@ export class Slicer<T> {
         this._.set(key, value);
       });
       this.lastSelection = item;
-      if (this.selected === 0 || this.selected === this._.size) {
+      if (this.selectionCount === 0 || this.selectionCount === this._.size) {
         this.clear();
       }
     }
@@ -174,7 +194,7 @@ export class Slicer<T> {
           }
           this._.set(key, value);
         });
-        this.selected = 1;
+        this.selectionCount = 1;
         this.lastSelection = item;
       }
     }
