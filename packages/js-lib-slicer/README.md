@@ -27,4 +27,10 @@ npm i @buckneri/js-lib-slicer
   // SlicerModifier.SHIFT_KEY defines the Shift key selection process on a slicer
   s.toggle("B", SlicerModifier.SHIFT_KEY); // selection = "B", "C"
   // equivalent to s.toggleRange("B");
+
+  // Add a new member to the collection
+  a.add("D"); // ["A", "B", "C", "D"]
+
+  // Remove a member from the collection
+  a.remove("A"); // ["B", "C", "D"]
 ```

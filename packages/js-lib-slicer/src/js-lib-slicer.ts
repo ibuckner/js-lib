@@ -148,11 +148,8 @@ export class Slicer<T> {
         this._.set(key, value);
       });
       this.lastSelection = item;
-      if (this.selected === 0) {
-        this._.forEach((value: TSlicerState, key: T) => {
-          value = { filtered: true, selected: false };
-          this._.set(key, value);
-        });
+      if (this.selected === 0 || this.selected === this._.size) {
+        this.clear();
       }
     }
     return this;
