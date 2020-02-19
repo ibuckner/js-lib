@@ -8,6 +8,8 @@ test("Test slicer using Ctrl key", () => {
 
   slicer.toggle("rat", SlicerModifier.CTRL_KEY);
   slicer.add("flea");
+  expect(slicer.has("flea")).toBe(true);
+  expect(slicer.has("mouse")).toBe(false);
   expect(slicer.data.get("cat")).toStrictEqual({ filtered: true, selected: false });
   expect(slicer.data.get("dog")).toStrictEqual({ filtered: true, selected: false });
   expect(slicer.data.get("rat")).toStrictEqual({ filtered: false, selected: true });
@@ -35,7 +37,7 @@ test("Test slicer using Ctrl key", () => {
   expect(slicer.lastSelection).toBe("rat");
   expect(slicer.selection).toStrictEqual(["cat"]);
 
-  slicer.toggle("rat", SlicerModifier.CTRL_KEY);
+  slicer.toggle("cat", SlicerModifier.CTRL_KEY);
   expect(slicer.data.get("cat")).toStrictEqual({ filtered: false, selected: false });
   expect(slicer.data.get("dog")).toStrictEqual({ filtered: false, selected: false });
   expect(slicer.data.get("rat")).toStrictEqual({ filtered: false, selected: false });

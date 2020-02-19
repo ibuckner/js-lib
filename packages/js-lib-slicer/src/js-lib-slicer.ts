@@ -73,6 +73,13 @@ export class Slicer<T> {
   }
 
   /**
+   * Returns true if key already in data set
+   */
+  public has(key: T): boolean {
+    return this._.has(key);
+  }
+
+  /**
    * Remove item from slicer
    * @param key 
    */
@@ -84,8 +91,8 @@ export class Slicer<T> {
     this._.delete(key);
     if (this.selectionCount === 0) {
       this.clear();
-    } else {
-      this.lastSelection = this.selection[this.selection.length - 1];
+    } else if (this.lastSelection === key) {
+      this.lastSelection = this.selection[0];
     }
     return this;
   }
