@@ -78,14 +78,33 @@ export class Slicer<T> {
 
   /**
    * Returns true if key already in data set
+   * @param key - item to search
    */
   public has(key: T): boolean {
     return this._.has(key);
   }
 
   /**
+   * Returns true if item is filtered
+   * @param key - item to search for
+   */
+  public isFiltered(key: T): boolean {
+    const item: TSlicerState | undefined =  this._.get(key);
+    return item ? item.filtered : false;
+  }
+
+  /**
+   * Returns true if item is selected
+   * @param key - item to search for
+   */
+  public isSelected(key: T): boolean {
+    const item: TSlicerState | undefined =  this._.get(key);
+    return item ? item.selected : false;
+  }
+
+  /**
    * Remove item from slicer
-   * @param key 
+   * @param key - item to remove
    */
   public remove(key: T): Slicer<T> {
     const state: TSlicerState | undefined = this._.get(key);

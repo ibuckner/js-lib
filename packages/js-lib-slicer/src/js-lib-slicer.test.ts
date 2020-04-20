@@ -13,6 +13,9 @@ test("Test slicer using Ctrl key", () => {
   expect(slicer.members).toStrictEqual(["cat", "dog", "rat", "flea"]);
   expect(slicer.lastSelection).toBe("rat");
   expect(slicer.selection).toStrictEqual(["rat"]);
+  expect(slicer.isSelected("rat")).toBe(true);
+  expect(slicer.isFiltered("flea")).toBe(true);
+  expect(slicer.isFiltered("rat")).toBe(false);
 
   slicer.toggle("cat", SlicerModifier.CTRL_KEY);
   expect(slicer.members).toStrictEqual(["cat", "dog", "rat", "flea"]);
