@@ -4,7 +4,7 @@ Simple slicer behaviour
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-slicer
 ```
 

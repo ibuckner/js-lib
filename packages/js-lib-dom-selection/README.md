@@ -4,7 +4,7 @@ Functions for DOM selections in the browser
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-dom-selection
 ```
 

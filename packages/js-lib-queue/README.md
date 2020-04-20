@@ -4,7 +4,7 @@ Simple queue data structure
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-queue
 ```
 

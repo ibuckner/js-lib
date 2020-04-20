@@ -4,7 +4,7 @@ Functions for working with svg elements
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-svg-element
 ```
 

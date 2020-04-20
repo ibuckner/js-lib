@@ -4,13 +4,13 @@ Create icons on SVG element
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-icon-svg
 ```
 
 ## Reference · [Source](https://github.com/ibuckner/js-lib/blob/master/packages/js-lib-icon-svg/src/js-lib-icon-svg.ts)
 
-* circleIcon (*length*, *pathOnly*) 
+* circleIcon (*length*, *pathOnly*)
 * closeIcon ()
 * crossIcon (*length*, *pathOnly*)
 * diamondIcon (*length*, *pathOnly*)

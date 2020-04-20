@@ -4,7 +4,7 @@ Functions for calculations
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-math
 ```
 

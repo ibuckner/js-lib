@@ -4,7 +4,7 @@ Functions for working with text selections
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-selection
 ```
 

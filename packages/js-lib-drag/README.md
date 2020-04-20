@@ -4,7 +4,7 @@ Functions working with drag and drop on SVG elements
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-drag
 ```
 

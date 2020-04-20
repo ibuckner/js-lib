@@ -4,7 +4,7 @@ Functions for asking, "Is something a ...?"
 
 ## Install
 
-```
+```js
 npm i @buckneri/js-lib-is
 ```
 
