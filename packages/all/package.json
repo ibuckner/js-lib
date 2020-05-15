@@ -38,5 +38,5 @@
     "tsc": "tsc"
   },
   "types": "lib/js-lib.d.ts",
-  "version": "0.2.4"
+  "version": "0.2.5"
 }
