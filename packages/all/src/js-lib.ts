@@ -31,13 +31,6 @@ export {
 export { Queue } from "@buckneri/js-lib-queue";
 
 export {
-  circleArea, circleRadius, countDigit,
-  fitToQuadrant, rectContain, rectIntersect,
-  round, splitCurve, stddev, sumValues,
-  triangleArea, triangleHeight
-} from "@buckneri/js-lib-math";
-
-export {
   rangeContiguous, rangeEmpty, selectionTrimLeft,
   selectionTrimRight, selectionTrim
 } from "@buckneri/js-lib-selection";

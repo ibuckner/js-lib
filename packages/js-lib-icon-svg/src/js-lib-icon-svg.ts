@@ -1,5 +1,4 @@
 import { toNodes } from "@buckneri/js-lib-dom";
-import { triangleHeight } from "@buckneri/js-lib-math";
 
 /**
  * Draws circle icon to the active SVG element
@@ -276,4 +275,20 @@ export function undoIcon(): SVGSVGElement {
     <rect class="bg" fill="#fff" height="100%" width="100%" x="0" y="0"></rect>
     <path d="${p}" stroke="skyblue"></path>
   </svg>`, true);
+}
+
+function triangleHeight(a: number, b: number, c: number): { a: number, b: number, c: number} {
+  const area: any = triangleArea(a, b, c);
+  return {
+    a: (2 * area) / a,
+    b: (2 * area) / b,
+    c: (2 * area) / c,
+  };
+}
+
+function triangleArea(a: number, b: number, c: number): number {
+  const sum: number = a + b + c;
+  const sem: number = sum / 2;
+  const area: number = Math.sqrt(sem * (sem - a) * (sem - b) * (sem - c));
+  return area;
 }

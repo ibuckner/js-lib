@@ -5,8 +5,7 @@
   },
   "description": "Create icons on SVG element",
   "dependencies": {
-    "@buckneri/js-lib-dom": "^0.0.3",
-    "@buckneri/js-lib-math": "^0.0.6"
+    "@buckneri/js-lib-dom": "^0.0.3"
   },
   "directories": {
     "lib": "lib"
