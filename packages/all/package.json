@@ -14,7 +14,6 @@
     "@buckneri/js-lib-is": "^0.0.4",
     "@buckneri/js-lib-math": "^0.0.6",
     "@buckneri/js-lib-queue": "^0.0.5",
-    "@buckneri/js-lib-random": "^0.1.5",
     "@buckneri/js-lib-selection": "^0.0.6",
     "@buckneri/js-lib-slicer": "^0.0.3",
     "@buckneri/js-lib-svg-element": "^0.0.5"
