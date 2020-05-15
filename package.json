@@ -26,9 +26,9 @@
     "clean.npm": "npm i --package-lock-only",
     "eslint": "eslint -c .eslintrc.json --ext .ts --ext .js ./src",
     "upload": "lerna publish",
-    "upload-test": "npm publish --dry-run --access public",
     "test": "jest --config jestconfig.json",
     "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --config jestconfig.json --runInBand",
+    "test-upload": "npm publish --dry-run --access public",
     "tsc": "lerna run tsc",
     "wipe.npm": "rimraf package-lock.json"
   },
