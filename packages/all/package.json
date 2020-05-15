@@ -10,7 +10,7 @@
     "@buckneri/js-lib-dom-selection": "^0.0.5",
     "@buckneri/js-lib-drag": "^0.0.5",
     "@buckneri/js-lib-icon-canvas": "^0.0.5",
-    "@buckneri/js-lib-icon-svg": "^0.0.7",
+    "@buckneri/js-lib-icon-svg": "^0.0.8",
     "@buckneri/js-lib-is": "^0.0.4",
     "@buckneri/js-lib-queue": "^0.0.5",
     "@buckneri/js-lib-selection": "^0.0.6",
@@ -37,5 +37,5 @@
     "tsc": "tsc"
   },
   "types": "lib/js-lib.d.ts",
-  "version": "0.2.5"
+  "version": "0.2.6"
 }

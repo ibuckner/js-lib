@@ -26,5 +26,5 @@
     "tsc": "tsc"
   },
   "types": "lib/js-lib-icon-svg.d.ts",
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
