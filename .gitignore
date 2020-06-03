@@ -1,15 +1,10 @@
 *.log
-*.pid
-*.pid.lock
-*.seed
 .buildcache
 .npm
-.rpt2_cache
 build
-dist
 logs
 npm-debug.log*
 node_modules
 packages/*/lib
-pids
 private
+package-lock.json
