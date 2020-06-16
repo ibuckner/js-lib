@@ -1,14 +1,8 @@
-export { unique } from "@buckneri/js-lib-array";
-
 export { RGB } from "@buckneri/js-lib-color";
 
 export {
   aspectRatio, getJSON, pageOffset, resetWheel, toNodes
 } from "@buckneri/js-lib-dom";
-
-export {
-  all, one
-} from "@buckneri/js-lib-dom-selection";
 
 export { Drag } from "@buckneri/js-lib-drag";
 
@@ -21,14 +15,6 @@ export {
   ellipseIcon, exportIcon, legendIcon, magnifyIcon,
   rectangleIcon, selectIcon, squareIcon, undoIcon
 } from "@buckneri/js-lib-icon-svg";
-
-export {
-  isBrowser, isDate, isEmail, isEmpty, isIE,
-  isNHSNumber, isNumeric, isPostcode, isURL,
-  reYYYYMMDD, reEmail, reDecimal, rePostcode, reURL
-} from "@buckneri/js-lib-is";
-
-export { Queue } from "@buckneri/js-lib-queue";
 
 export {
   rangeContiguous, rangeEmpty, selectionTrimLeft,

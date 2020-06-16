@@ -1,7 +1,0 @@
-*.log*
-*.json
-.gitignore
-.rpt2_cache
-.vscode
-node_modules
-src/

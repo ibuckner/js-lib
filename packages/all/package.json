@@ -4,7 +4,6 @@
     "url": "https://github.com/ibuckner/js-lib/issues"
   },
   "dependencies": {
-    "@buckneri/js-lib-array": "^0.0.5",
     "@buckneri/js-lib-color": "^0.0.6",
     "@buckneri/js-lib-dom": "^0.0.3",
     "@buckneri/js-lib-dom-selection": "^0.0.5",
@@ -12,9 +11,7 @@
     "@buckneri/js-lib-icon-canvas": "^0.0.5",
     "@buckneri/js-lib-icon-svg": "^0.0.8",
     "@buckneri/js-lib-is": "^0.0.4",
-    "@buckneri/js-lib-queue": "^0.0.5",
     "@buckneri/js-lib-selection": "^0.0.6",
-    "@buckneri/js-lib-slicer": "^0.0.3",
     "@buckneri/js-lib-svg-element": "^0.0.5"
   },
   "description": "Small tools for various tasks",

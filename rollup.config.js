@@ -3,9 +3,7 @@ import { terser } from "rollup-plugin-terser";
 
 const plugins = [
 	resolve(),
-	terser({
-		include: [/^.+\.min\.js$/]
-	})
+	terser()
 ];
 
 function onwarn(warning) {
