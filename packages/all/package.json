@@ -8,7 +8,7 @@
     "@buckneri/js-lib-drag": "^0.0.5",
     "@buckneri/js-lib-icon-canvas": "^0.0.5",
     "@buckneri/js-lib-icon-svg": "^0.0.8",
-    "@buckneri/js-lib-svg-element": "^0.0.5"
+    "@buckneri/js-lib-svg-element": "^0.0.6"
   },
   "description": "Small tools for various tasks",
   "directories": {
@@ -30,5 +30,5 @@
     "tsc": "tsc"
   },
   "types": "lib/js-lib.d.ts",
-  "version": "0.2.8"
+  "version": "0.2.9"
 }
