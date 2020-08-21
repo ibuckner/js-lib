@@ -15,10 +15,5 @@ export {
 } from "@buckneri/js-lib-icon-svg";
 
 export {
-  rangeContiguous, rangeEmpty, selectionTrimLeft,
-  selectionTrimRight, selectionTrim
-} from "@buckneri/js-lib-selection";
-
-export {
   getTranslation, pathArc, pathLine, pattern, textWidth
 } from "@buckneri/js-lib-svg-element";
