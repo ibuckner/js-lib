@@ -4,7 +4,6 @@
     "url": "https://github.com/ibuckner/js-lib/issues"
   },
   "dependencies": {
-    "@buckneri/js-lib-color": "^0.0.6",
     "@buckneri/js-lib-dom": "^0.0.3",
     "@buckneri/js-lib-dom-selection": "^0.0.5",
     "@buckneri/js-lib-drag": "^0.0.5",

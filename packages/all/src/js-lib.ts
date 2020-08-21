@@ -1,5 +1,3 @@
-export { RGB } from "@buckneri/js-lib-color";
-
 export {
   aspectRatio, getJSON, pageOffset, resetWheel, toNodes
 } from "@buckneri/js-lib-dom";
