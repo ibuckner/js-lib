@@ -1,6 +1,6 @@
 {
   "name": "root",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "private": true,
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
