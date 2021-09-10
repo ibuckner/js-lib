@@ -5,6 +5,6 @@ build
 logs
 npm-debug.log*
 node_modules
-packages/*/lib
+packages/*/dist
 private
 package-lock.json

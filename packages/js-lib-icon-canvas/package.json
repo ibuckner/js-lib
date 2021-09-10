@@ -4,13 +4,24 @@
     "url": "https://github.com/ibuckner/js-lib/issues"
   },
   "description": "Create icons on HTML5 Canvas element",
-  "directories": {
-    "lib": "lib"
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsdoc": "36.1.0",
+    "jest": "^27.1.1",
+    "jsdoc": "^3.6.7",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.2"
+  },
+  "exports": {
+    "./*": "./dist/*.js"
   },
   "homepage": "https://github.com/ibuckner/js-lib#readme",
   "license": "MIT",
-  "main": "lib/js-lib-icon-canvas.js",
-  "module": "lib/js-lib-icon-canvas.js",
   "name": "@buckneri/js-lib-icon-canvas",
   "publishConfig": {
     "access": "public"
@@ -20,8 +31,19 @@
     "url": "git+https://github.com/ibuckner/js-lib.git"
   },
   "scripts": {
-    "tsc": "tsc"
+    "build": "tsc",
+    "test": "jest --config jestconfig.json",
+    "test-debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --config jestconfig.json --runInBand",
+    "test-upload": "npm publish --dry-run --access public",
+    "upload": "npm publish --access public"
   },
-  "types": "lib/js-lib-icon-canvas.d.ts",
-  "version": "0.0.5"
+  "type": "module",
+  "typesVersions": {
+    "*": {
+      "./*": [
+        "./dist/*"
+      ]
+    }
+  },
+  "version": "0.1.0"
 }

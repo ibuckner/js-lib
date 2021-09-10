@@ -1,4 +1,22 @@
-import { toNodes } from "@buckneri/js-lib-dom";
+function toNodes(
+  template: string, 
+  isSVG: boolean = false
+): any {
+  try {
+    const d: DOMParser = new DOMParser();
+    let root: Document;
+    if (isSVG) {
+      root = d.parseFromString(`<svg xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">${template}</svg>`, "image/svg+xml");
+      return root.documentElement.children[0];
+    } else {
+      root = d.parseFromString(template, "text/html");
+      return root.body.childNodes[0];
+    }
+  } catch {
+    throw new Error("Error parsing templates string");
+  }
+}
 
 type TTextWidth = {
   text: { h: number, value: string, w: number }[],
@@ -13,7 +31,7 @@ type TTextWidth = {
 export function getTranslation(transform: string): any {
   const g: SVGGElement = document.createElementNS("http://www.w3.org/2000/svg", "g");
   g.setAttributeNS(null, "transform", transform);
-  const matrix: DOMMatrix = g.transform.baseVal.consolidate().matrix;
+  const matrix: DOMMatrix = g.transform.baseVal.consolidate()?.matrix as DOMMatrix;
   return {
     x: matrix.e,
     y: matrix.f

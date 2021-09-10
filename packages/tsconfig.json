@@ -1,0 +1,20 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./js-lib-dom/tsconfig.ref.json"
+    },
+    {
+      "path": "./js-lib-drag/tsconfig.ref.json"
+    },
+    {
+      "path": "./js-lib-icon-canvas/tsconfig.ref.json"
+    },
+    {
+      "path": "./js-lib-icon-svg/tsconfig.ref.json"
+    },
+    {
+      "path": "./js-lib-svg-element/tsconfig.ref.json"
+    },
+  ],
+}
